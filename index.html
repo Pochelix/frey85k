@@ -1,0 +1,731 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b2743">
+<title>FREY 85K · Diego Alaniz · Seguimiento</title>
+<meta name="description" content="Posición estimada, horario de paso, pronóstico y link a LiveTrail de Diego Alaniz en la FREY 85K de Patagonia Bariloche by UTMB, sábado 21 de noviembre.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_AR">
+<meta property="og:title" content="FREY 85K · Diego Alaniz · Seguimiento">
+<meta property="og:description" content="Posición estimada, horario de paso, pronóstico y link a LiveTrail de Diego Alaniz en la FREY 85K de Patagonia Bariloche by UTMB, sábado 21 de noviembre.">
+<meta property="og:url" content="https://pochelix.github.io/frey85k/">
+<meta property="og:image" content="https://pochelix.github.io/frey85k/vista.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<style>:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0;padding:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oxanium:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+
+/* Layout: banda de carrera arriba, navegación fija por apartados, bloques de una o dos columnas que caen a una en el celu */
+:root{
+  --bg:#eef2ee; --surface:#ffffff; --ink:#0b2743; --muted:#56657a; --line:#d5ddd6;
+  --navy:#0b2743; --green:#79da62; --green-ink:#2f7d22; --teal:#2fcfb0; --soft:#e4f6de;
+  --ok:#2f8f3a; --warn:#b7791f; --bad:#c2412d; --on-navy:#ffffff;
+  --display:"Oxanium","Bahnschrift","Segoe UI",system-ui,sans-serif;
+  --body:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#071626; --surface:#0d2139; --ink:#e7eef5; --muted:#9fb0c4; --line:#1f3a58;
+  --navy:#0b2743; --green:#79da62; --green-ink:#8fe37a; --teal:#3ad9ba; --soft:#143b2a;
+  --ok:#6fd37c; --warn:#e9b44c; --bad:#ff7a63; --on-navy:#ffffff; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#071626; --surface:#0d2139; --ink:#e7eef5; --muted:#9fb0c4; --line:#1f3a58;
+  --navy:#0b2743; --green:#79da62; --green-ink:#8fe37a; --teal:#3ad9ba; --soft:#143b2a;
+  --ok:#6fd37c; --warn:#e9b44c; --bad:#ff7a63; --on-navy:#ffffff; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:15px;line-height:1.5}
+.wrap{max-width:1120px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3,.num{font-family:var(--display);text-wrap:balance}
+h2{font-size:1.5rem;margin:0;letter-spacing:.01em}
+h3{font-size:1.05rem;margin:0 0 .5rem}
+a{color:var(--green-ink);font-weight:600}
+.tab{font-variant-numeric:tabular-nums}
+
+/* banda */
+.band{background:var(--navy);color:var(--on-navy);position:relative;overflow:hidden}
+.band::after{content:"";position:absolute;right:-60px;top:0;bottom:0;width:46%;background:var(--green);clip-path:polygon(22% 0,100% 0,100% 100%,0 100%)}
+.band .wrap{position:relative;z-index:1;padding-block:28px 26px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:end}
+.eyebrow{font-family:var(--display);letter-spacing:.14em;text-transform:uppercase;font-size:.78rem;color:var(--green)}
+.band h1{font-size:clamp(2.4rem,7vw,4.2rem);line-height:.95;margin:.2rem 0 .4rem;font-weight:800;color:#fff}
+.band h1 span{color:var(--green)}
+.band p{margin:0;color:#c9d6e6;max-width:46ch}
+.count{background:var(--navy);border:2px solid #fff;padding:12px 16px;min-width:250px}
+.count .lbl{font-family:var(--display);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--green)}
+.count .val{font-family:var(--display);font-size:2rem;font-weight:700;color:#fff;line-height:1.1}
+.count .sub{font-size:.8rem;color:#c9d6e6}
+.facts{display:grid;grid-template-columns:repeat(6,1fr);background:var(--surface);border-bottom:1px solid var(--line)}
+.facts>div{padding:14px 12px;border-right:1px solid var(--line)}
+.facts>div:last-child{border-right:0}
+.facts .k{font-size:.72rem;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);font-family:var(--display)}
+.facts .v{font-family:var(--display);font-size:1.35rem;font-weight:700}
+.facts .v small{font-size:.8rem;font-weight:600;color:var(--muted)}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto;padding-block:8px;scrollbar-width:none}
+nav a{font-family:var(--display);font-weight:600;font-size:.86rem;text-decoration:none;color:var(--ink);padding:6px 12px;white-space:nowrap;border:1px solid transparent}
+nav a:hover,nav a:focus-visible{border-color:var(--green);outline:none}
+nav a.esp{background:var(--green);color:var(--navy)}
+
+section{padding-block:34px 8px;scroll-margin-top:56px}
+.sh{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.sh .tag{font-family:var(--display);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;background:var(--navy);color:var(--green);padding:3px 8px}
+.sh p{margin:0;color:var(--muted);flex-basis:100%}
+.panel{background:var(--surface);border:1px solid var(--line);padding:18px}
+.grid2{display:grid;grid-template-columns:1.25fr 1fr;gap:16px}
+.grid2>*{min-width:0}
+
+/* perfil y mapa */
+svg text{font-family:var(--display);fill:var(--muted)}
+.chart-wrap{overflow-x:auto}
+#perfil{width:100%;height:auto;display:block}
+#mapa{width:100%;height:auto;display:block;max-height:520px}
+.legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:8px}
+.legend i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:middle}
+
+/* tablas */
+.tbl{overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:.88rem}
+th{font-family:var(--display);font-weight:600;text-align:left;background:var(--green);color:var(--navy);padding:8px;white-space:nowrap}
+td{padding:8px;border-bottom:1px solid var(--line);vertical-align:top}
+tr.pa td:first-child{font-weight:600}
+tr.paso td{color:var(--muted)}
+tr.hl td{background:var(--soft)}
+.chips{display:flex;gap:4px;flex-wrap:wrap}
+.chip{font-size:.7rem;border:1px solid var(--line);padding:1px 6px;white-space:nowrap;color:var(--ink)}
+.chip.on{border-color:var(--green-ink);color:var(--green-ink);font-weight:600}
+.pill{font-family:var(--display);font-size:.75rem;font-weight:700;padding:2px 8px;white-space:nowrap;display:inline-block}
+.pill.ok{background:var(--soft);background:color-mix(in srgb,var(--ok) 18%,transparent);color:var(--ok)}
+.pill.warn{background:var(--soft);background:color-mix(in srgb,var(--warn) 20%,transparent);color:var(--warn)}
+.pill.iso{background:var(--soft);background:color-mix(in srgb,var(--teal) 20%,transparent);color:var(--ink)}
+.pill.bad{background:var(--soft);background:color-mix(in srgb,var(--bad) 18%,transparent);color:var(--bad)}
+
+/* asistencia */
+.assist{display:grid;grid-template-columns:auto 1fr;gap:0;border:2px solid var(--navy)}
+.assist .big{background:var(--navy);color:#fff;padding:20px 22px;display:flex;flex-direction:column;justify-content:center;gap:4px}
+.assist .big .num{font-size:3rem;font-weight:800;line-height:1;color:var(--green)}
+.assist .big .n2{font-family:var(--display);font-size:1.3rem;font-weight:700}
+.assist .body{padding:18px;background:var(--surface);display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.assist .body>div{min-width:0}
+.k2{font-family:var(--display);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+.v2{font-family:var(--display);font-size:1.3rem;font-weight:700}
+ul.rules{margin:0;padding:0;list-style:none;display:grid;gap:8px}
+ul.rules li{padding-left:22px;position:relative}
+ul.rules li::before{content:"";position:absolute;left:0;top:.45em;width:10px;height:10px;background:var(--green)}
+ul.rules.no li::before{background:var(--bad)}
+.note{border-left:4px solid var(--green);background:var(--surface);padding:10px 14px;font-size:.9rem}
+.note.warn{border-left-color:var(--warn)}
+
+/* alentar */
+.calc{display:flex;gap:12px;align-items:end;flex-wrap:wrap;margin-bottom:12px}
+.calc label{font-family:var(--display);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);display:block}
+.calc input{font-family:var(--display);font-size:1.4rem;font-weight:700;width:7.5ch;padding:4px 8px;border:2px solid var(--navy);background:var(--surface);color:var(--ink)}
+:root[data-theme="dark"] .calc input{border-color:var(--green)}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]) .calc input{border-color:var(--green)}}
+.calc input:focus-visible{outline:3px solid var(--green);outline-offset:1px}
+.calc .hint{font-size:.82rem;color:var(--muted);max-width:52ch}
+.presets{display:flex;gap:6px;flex-wrap:wrap}
+.presets button{font-family:var(--display);font-weight:600;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:6px 10px;cursor:pointer}
+.presets button:hover,.presets button:focus-visible{border-color:var(--green-ink);outline:none}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.card{background:var(--surface);border:1px solid var(--line);padding:14px;display:grid;gap:6px;align-content:start}
+.card.as{border:2px solid var(--green)}
+.card .top{display:flex;justify-content:space-between;gap:8px;align-items:baseline}
+.card .name{font-family:var(--display);font-weight:700;font-size:1.05rem}
+.card .km{font-family:var(--display);color:var(--muted);font-size:.85rem;white-space:nowrap}
+.card .eta{font-family:var(--display);font-size:1.7rem;font-weight:700;line-height:1.1}
+.card .eta small{font-size:.8rem;color:var(--muted);font-weight:600;display:block}
+.card .win{font-size:.82rem;color:var(--muted)}
+.card .tip{font-size:.82rem}
+
+/* cronograma */
+.agenda{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.day{background:var(--surface);border:1px solid var(--line)}
+.day h3{background:var(--navy);color:#fff;margin:0;padding:8px 12px;font-size:.95rem}
+.day ol{list-style:none;margin:0;padding:6px 12px 10px}
+.day li{display:grid;grid-template-columns:7.2ch 1fr;gap:8px;padding:6px 0;border-bottom:1px solid var(--line);font-size:.88rem}
+.day li:last-child{border-bottom:0}
+.day li b{font-family:var(--display)}
+.day li .t{font-family:var(--display);font-weight:600;font-variant-numeric:tabular-nums}
+.day li.key{color:var(--green-ink)}
+.day li span small{display:block;color:var(--muted);font-size:.78rem}
+
+.btn{display:inline-block;font-family:var(--display);font-weight:700;background:var(--green);color:var(--navy);padding:8px 14px;text-decoration:none}
+.btn:hover,.btn:focus-visible{outline:3px solid var(--navy);outline-offset:1px}
+/* tabla de puestos: lista en el celular */
+.tlist{display:none;list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line)}
+.tlist li{display:grid;grid-template-columns:62px 1fr;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.tlist li:last-child{border-bottom:0}
+.tlist li>div{min-width:0}
+.tlist .h{font-family:var(--display);font-size:1.2rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.tlist .h small{display:block;font-size:.7rem;font-weight:400;color:var(--muted)}
+.tlist .n{font-family:var(--display);font-weight:700}
+.tlist .m{font-size:.8rem;color:var(--muted);font-variant-numeric:tabular-nums}
+.tlist li.paso .n,.tlist li.paso .h{color:var(--muted);font-weight:600}
+.tlist li.hl{background:var(--soft)}
+@media (max-width:640px){ .tpuestos-wrap,.wx-wrap{display:none} .tlist{display:block} }
+/* material */
+.kit{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+.kit>div{min-width:0}
+.check{display:grid;gap:2px;margin:0;padding:0;list-style:none}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:7px 4px;border-bottom:1px solid var(--line);cursor:pointer;font-size:.9rem}
+.check input{accent-color:var(--green-ink);width:18px;height:18px;margin-top:1px;flex:none}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.prog{font-family:var(--display);font-weight:700}
+.mini{display:flex;gap:8px;flex-wrap:wrap}
+.mini span{font-size:.82rem;border:1px solid var(--line);padding:3px 8px;background:var(--surface)}
+footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
+
+/* mi plan */
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);background:var(--surface);border:1px solid var(--line)}
+.tiles>div{padding:12px 14px;border-right:1px solid var(--line);min-width:0}
+.tiles>div:last-child{border-right:0}
+.tiles small{color:var(--muted);font-size:.78rem}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:0;background:var(--surface);border:1px solid var(--line)}
+.tl li{display:grid;grid-template-columns:150px 1fr 290px;gap:18px;padding:14px 16px;border-bottom:1px solid var(--line);position:relative}
+.tl li:last-child{border-bottom:0}
+.tl li>div{min-width:0}
+.tl li.as{background:var(--soft)}
+.tl .hora{font-family:var(--display);font-size:1.7rem;font-weight:700;line-height:1}
+.tl .meta{font-size:.8rem;color:var(--muted);margin-top:4px}
+.tl .pt{font-family:var(--display);font-weight:700;font-size:1.1rem;display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tl .tramo{font-size:.8rem;color:var(--muted);margin:2px 0 6px}
+.tl .nota{font-size:.9rem;margin:0}
+.tl .come{font-size:.88rem}
+.tl .come .k2{margin-bottom:2px}
+.tl .pills{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px}
+.bar{display:grid;grid-template-columns:110px 1fr 74px;gap:10px;align-items:center;font-size:.82rem;padding:4px 0}
+.bar .track{height:10px;background:var(--line);position:relative}
+.bar .fill{position:absolute;inset:0 auto 0 0;background:var(--green)}
+.bar .fill.over{background:var(--bad)}
+.bar .cap{position:absolute;top:-3px;bottom:-3px;width:2px;background:var(--ink)}
+.bar .r{text-align:right;font-family:var(--display);font-weight:600}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px}
+.grid3>*{min-width:0}
+.kit4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.kit4>*{min-width:0}
+.kit4 .check label{font-size:.85rem;padding:5px 2px}
+
+@media (max-width:1000px){
+  .tl li{grid-template-columns:120px 1fr}
+  .tl li .come{grid-column:2}
+  .kit4{grid-template-columns:1fr 1fr}
+}
+@media (max-width:860px){
+  .grid2,.kit,.grid3{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tiles>div:nth-child(3){border-right:0}
+  .tiles>div:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .cards,.agenda{grid-template-columns:1fr 1fr}
+  .facts{grid-template-columns:repeat(3,1fr)}
+  .facts>div:nth-child(3){border-right:0}
+  .facts>div:nth-child(-n+3){border-bottom:1px solid var(--line)}
+  .assist{grid-template-columns:1fr}
+  .assist .body{grid-template-columns:1fr}
+  .band .wrap{grid-template-columns:1fr}
+  .band::after{width:30%;opacity:.9}
+}
+@media (max-width:560px){
+  .cards,.agenda,.kit4{grid-template-columns:1fr}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tiles>div{border-right:0;border-bottom:1px solid var(--line)}
+  .tiles>div:nth-child(odd){border-right:1px solid var(--line)}
+  .tl li{grid-template-columns:1fr;gap:8px}
+  .tl li .come{grid-column:auto}
+  .bar{grid-template-columns:90px 1fr 64px}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .facts>div{border-right:0;border-bottom:1px solid var(--line)}
+  .facts>div:nth-child(odd){border-right:1px solid var(--line)}
+  .band::after{display:none}
+  .count{min-width:0}
+}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+
+/* seguimiento: versión sobria, sin la diagonal de la portada */
+.band::after{display:none}
+.band .wrap{padding-block:22px 20px}
+.band h1{font-size:clamp(2rem,5vw,3rem);margin:.15rem 0 .2rem}
+.band p{color:#c9d6e6}
+.now{display:grid;grid-template-columns:230px 1fr;border:1px solid var(--line);background:var(--surface)}
+.now .l{background:var(--navy);color:#fff;padding:14px 18px;display:flex;flex-direction:column;justify-content:center;gap:2px}
+.now .l .k2{color:var(--green)}
+.now .l .big{font-family:var(--display);font-size:1.9rem;font-weight:800;line-height:1.05}
+.now .l .s2{font-size:.8rem;color:#c9d6e6}
+.now .r{padding:14px 18px;display:grid;gap:6px;align-content:center;min-width:0}
+.now .r p{margin:0}
+@keyframes pulso{0%{r:7;opacity:.5}100%{r:18;opacity:0}}
+@media (prefers-reduced-motion:no-preference){#perfil .pulso{animation:pulso 1.8s ease-out infinite}}
+.now .nx{font-family:var(--display);font-size:1.15rem;font-weight:700;color:var(--green-ink)}
+.now .meter{height:8px;background:var(--line);position:relative;margin-top:2px}
+.now .meter span{position:absolute;inset:0 auto 0 0;background:var(--green)}
+.now .s{font-size:.82rem;color:var(--muted)}
+.etapas{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:1px solid var(--line);background:var(--surface)}
+.etapas>div{padding:14px 16px;border-right:1px solid var(--line);min-width:0;display:grid;gap:4px;align-content:start}
+.etapas>div:last-child{border-right:0}
+.etapas .n{font-family:var(--display);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.etapas .t{font-family:var(--display);font-weight:700;font-size:1.1rem}
+.etapas .d{font-family:var(--display);font-size:.85rem;font-variant-numeric:tabular-nums}
+.etapas .h{font-family:var(--display);font-weight:700;font-variant-numeric:tabular-nums;color:var(--green-ink)}
+.etapas p{margin:4px 0 0;font-size:.85rem;color:var(--muted)}
+#tpaso tr.pub td{background:var(--soft)}
+#tpaso tr.pc td{color:var(--muted)}
+#tpaso tr.done td{opacity:.5}
+#tpaso td.hora{font-family:var(--display);font-weight:700;font-size:1rem}
+#tpaso tr.next td{background:var(--soft);background:color-mix(in srgb,var(--green) 28%,var(--surface));font-weight:600}
+#tpaso tr.next td:first-child{box-shadow:inset 4px 0 0 var(--green)}
+.tagn{font-family:var(--display);font-size:.7rem;font-weight:700;background:var(--green);color:var(--navy);padding:1px 6px;margin-left:6px;white-space:nowrap}
+.plist{display:none;list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line)}
+.plist li{display:grid;grid-template-columns:66px 1fr;gap:10px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.plist li:last-child{border-bottom:0}
+.plist li>div{min-width:0}
+.plist .h{font-family:var(--display);font-size:1.25rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.2}
+.plist .h small{display:block;font-size:.7rem;font-weight:400;color:var(--muted)}
+.plist .n{font-family:var(--display);font-weight:700}
+.plist .m{font-size:.8rem;color:var(--muted)}
+.plist li.pub{background:var(--soft)}
+.plist li.pc .n,.plist li.pc .h{color:var(--muted);font-weight:600}
+.plist li.done{opacity:.5}
+.plist li.next{background:var(--soft);background:color-mix(in srgb,var(--green) 28%,var(--surface));box-shadow:inset 4px 0 0 var(--green)}
+@media (max-width:640px){ #paso .panel.tbl{display:none} .plist{display:block} }
+.ajuste{margin-top:12px;background:var(--surface);border:1px solid var(--line);padding:12px 14px;display:grid;gap:8px}
+.ajuste label{font-family:var(--display);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.ajrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.ajrow select,.ajrow input{font-family:var(--display);font-size:1rem;padding:6px 8px;border:1px solid var(--line);background:var(--bg);color:var(--ink);min-width:0;max-width:100%}
+.ajrow select:focus-visible,.ajrow input:focus-visible{outline:3px solid var(--green);outline-offset:1px}
+.ajrow button{font-family:var(--display);font-weight:700;padding:7px 12px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
+.ajrow button.pri{background:var(--green);border-color:var(--green);color:var(--navy)}
+.ajrow button:focus-visible{outline:3px solid var(--green);outline-offset:1px}
+.ajuste .msg{margin:0;font-size:.88rem}
+.ajuste .msg.on{color:var(--green-ink);font-weight:600}
+.ajuste .msg.err{color:var(--bad)}
+.esc{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:4px}
+.esc button{font:inherit;text-align:left;border:1px solid var(--line);background:var(--surface);color:var(--ink);padding:10px 12px;cursor:pointer;display:grid;gap:2px}
+.esc button:hover,.esc button:focus-visible{border-color:var(--green-ink);outline:none}
+.esc button[aria-pressed="true"]{border:2px solid var(--green);background:var(--soft)}
+.esc .et{font-family:var(--display);font-weight:700;font-size:1.05rem}
+.esc .el{font-family:var(--display);font-size:.82rem;font-variant-numeric:tabular-nums}
+@media (max-width:860px){.esc{grid-template-columns:1fr 1fr}}
+.esc button{padding:8px 10px}
+#esc-d{margin:8px 0 0;max-width:none}
+#perfil{min-width:0 !important;width:100%;height:auto}
+@media (max-width:560px){
+  .ajrow select{flex:1 1 100%}
+  .ajrow input{flex:1 1 30%}
+  .ajrow button{flex:1 1 30%}
+  .esc .et{font-size:.95rem}
+  .now .l .big{font-size:1.6rem}
+  .legend{gap:8px 12px;font-size:.75rem}
+  .sh h2{font-size:1.3rem}
+}
+.presets button[aria-pressed="true"]{background:var(--green);color:var(--navy);border-color:var(--green)}
+.live{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}
+.live>div{background:var(--surface);border:1px solid var(--line);padding:16px;min-width:0}
+.live .v2{font-size:1.1rem}
+.live p{margin:.4rem 0 0;font-size:.9rem}
+.btn{display:inline-block;font-family:var(--display);font-weight:700;background:var(--green);color:var(--navy);padding:8px 14px;text-decoration:none;margin-top:10px}
+.btn:hover,.btn:focus-visible{outline:3px solid var(--navy);outline-offset:1px}
+@media (max-width:860px){ .live{grid-template-columns:1fr} .now{grid-template-columns:1fr} .etapas{grid-template-columns:1fr 1fr} .etapas>div:nth-child(2){border-right:0} .etapas>div:nth-child(-n+2){border-bottom:1px solid var(--line)} }
+@media (max-width:560px){ .etapas{grid-template-columns:1fr} .etapas>div{border-right:0;border-bottom:1px solid var(--line)} }
+</style>
+
+<header class="band">
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Patagonia Bariloche by UTMB 2026 · Seguimiento de carrera</div>
+      <h1>FREY <span>85K</span> · Diego Alaniz</h1>
+      <p>Horas estimadas según el plan de carrera, objetivo 14:16.</p>
+    </div>
+    <div class="count" aria-live="polite">
+      <div class="lbl" id="cd-lbl">Falta para la largada</div>
+      <div class="val tab" id="cd">—</div>
+      <div class="sub">Sáb 21 nov · 05:00 · Centro Cívico</div>
+    </div>
+  </div>
+</header>
+<div class="facts">
+  <div><div class="k">Largada</div><div class="v">05:00 <small>sáb 21</small></div></div>
+  <div><div class="k">Distancia</div><div class="v">88,2 <small>km</small></div></div>
+  <div><div class="k">Desnivel</div><div class="v">4760 <small>m+</small></div></div>
+  <div><div class="k" id="f-obj-k">Tiempo objetivo</div><div class="v" id="f-obj">14:16 <small>h</small></div></div>
+  <div><div class="k">Llegada estimada</div><div class="v" id="f-lleg">19:16 <small>sáb 21</small></div></div>
+  <div><div class="k">Corte final</div><div class="v">03:00 <small>dom 22</small></div></div>
+</div>
+
+<nav aria-label="Apartados">
+  <div class="wrap">
+    <a href="#estado">Estado</a>
+    <a href="#paso" class="esp">Horario de paso</a>
+    <a href="#pronostico">Clima</a>
+    <a href="#vivo" class="esp">En vivo</a>
+    <a href="#chucaro">El Chúcaro</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<section id="estado">
+  <div class="sh"><h2>Posición estimada</h2>
+    <p>Se calcula con la hora actual y el plan de carrera, y se actualiza sola cada 30 segundos. No es la posición GPS: la real está en <a href="#vivo">LiveTrail</a>.</p></div>
+  <div class="now">
+    <div class="l"><span class="k2" id="now-k">Estado</span><span class="big tab" id="now-big">—</span><span class="s2" id="now-s2"></span></div>
+    <div class="r"><p id="now-next" class="nx" hidden></p><p id="now-txt">—</p><div class="meter" aria-hidden="true"><span id="now-bar" style="width:0%"></span></div><p class="s" id="now-sub"></p></div>
+  </div>
+  <div class="calc" style="margin-top:12px">
+    <div><label>Escenario</label>
+      <div class="esc" role="group" aria-label="Escenario de tiempo total" id="esc"></div></div>
+    <p class="hint" id="esc-d"></p>
+  </div>
+  <div class="ajuste">
+    <label for="aj-pt">Ajustar con un paso real de LiveTrail</label>
+    <div class="ajrow">
+      <select id="aj-pt" aria-label="Último punto registrado en LiveTrail"></select>
+      <input id="aj-h" type="time" step="60" aria-label="Hora de paso registrada">
+      <button type="button" id="aj-ok" class="pri">Recalcular</button>
+      <button type="button" id="aj-x">Volver al plan</button>
+    </div>
+    <p class="msg" id="aj-msg" aria-live="polite"></p>
+  </div>
+  <div class="panel chart-wrap" style="margin-top:12px"><svg id="perfil" viewBox="0 0 1000 300" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Perfil de altimetría de la FREY 85K con la posición estimada"></svg>
+    <div class="legend"><span><i style="background:var(--green)"></i>Punto con público</span><span><i style="background:var(--navy);outline:1px solid var(--line)"></i>Otros puntos</span><span><i style="background:var(--teal)"></i>El Chúcaro (asistencia)</span><span><i style="background:var(--bad)"></i>Hora de corte</span><span><i style="background:var(--ink);border-radius:50%"></i>Posición estimada</span><span><i style="background:var(--green);opacity:.75"></i>Tramo recorrido</span></div>
+  </div>
+  <h3 style="margin:20px 0 10px">Cuatro etapas</h3>
+  <div class="etapas" id="etapas"></div>
+</section>
+
+<section id="pronostico">
+  <div class="sh"><h2>Pronóstico del sábado</h2><span class="tag" id="wx-tag">Open-Meteo</span>
+    <p>Temperatura, sensación térmica, viento y lluvia en cada punto, a la hora estimada de paso (según el escenario o el ajuste elegido) y a su altura.</p></div>
+  <div class="mini" id="wx-res" style="margin-bottom:12px"></div>
+  <div class="panel tbl wx-wrap"><table id="wx-t"></table></div>
+  <ol class="tlist" id="wx-l"></ol>
+  <p class="note" style="margin-top:12px" id="wx-nota"></p>
+</section>
+
+<section id="paso">
+  <div class="sh"><h2>Horario estimado de paso</h2>
+    <p>Todos los puntos del recorrido. En verde, los habilitados para público. Las cumbres no están en el plan: su hora es aproximada; el paso real, ver en <a href="https://barilochebyutmb.v3.livetrail.net/es/2026/runners/1168?raceId=85k" target="_blank" rel="noopener">LiveTrail</a>.</p></div>
+  <div class="panel tbl"><table id="tpaso"></table></div>
+  <ol class="plist" id="lpaso"></ol>
+  <p class="note warn" style="margin-top:12px">Carrera de semi-autonomía: fuera de El Chúcaro no se permite ninguna asistencia (comida, bebida, ropa ni acompañamiento), bajo pena de penalización al corredor. El Complejo Los Baqueanos no tiene estacionamiento: llegar en Uber, taxi, colectivo o auto que no se quede.</p>
+</section>
+
+<section id="vivo">
+  <div class="sh"><h2>Seguimiento en vivo</h2></div>
+  <div class="live">
+    <div><div class="k2">LiveTrail · posición real</div><div class="v2">Diego Alaniz · FREY 85K</div><p>Pasos registrados por cada control, tiempos parciales y posición en la carrera.</p>
+      <a class="btn" href="https://barilochebyutmb.v3.livetrail.net/es/2026/runners/1168?raceId=85k" target="_blank" rel="noopener">Abrir en LiveTrail ↗</a></div>
+    <div><div class="k2">App UTMB</div><p>Con el corredor marcado como favorito, avisa cada paso por un control.</p></div>
+    <div><div class="k2">Demoras</div><p>En la montaña la señal se corta: los pasos pueden aparecer con retraso o de a varios juntos.</p></div>
+  </div>
+</section>
+
+<section id="chucaro">
+  <div class="sh"><h2>El Chúcaro · km 56,1</h2><span class="tag">Único punto de asistencia</span></div>
+  <div class="grid2">
+    <div class="panel"><h3>Reglas de la organización</h3><ul class="rules">
+      <li>Una sola persona asiste al corredor.</li>
+      <li>Sólo en la zona reservada del puesto, a criterio del jefe del punto.</li>
+      <li>Una bolsa de 30 litros como máximo.</li></ul></div>
+    <div class="panel"><h3>Datos del puesto</h3>
+      <p style="margin:0 0 6px">1054 m · comida caliente, baño, carga eléctrica, emergencia y bus de la organización.</p>
+      <p style="margin:0" id="chu-hora"></p>
+      <a class="btn" href="https://maps.app.goo.gl/5XjkG8amFYgqVZv87" target="_blank" rel="noopener">Ubicación ↗</a></div>
+  </div>
+</section>
+
+<footer>Horas estimadas: plan de carrera de Diego (objetivo 14:16). Puntos, desnivel, horas de corte y reglas: Guía del Corredor Patagonia Bariloche by UTMB 2026. Perfil: track oficial 2026. Las ubicaciones son las de la guía.</footer>
+</main>
+
+<script>
+const RUTA = {"total": 86.72, "prof": [[0.0, 795], [0.26, 806], [0.51, 822], [0.77, 844], [1.0, 865], [1.26, 891], [1.5, 886], [1.76, 886], [2.01, 906], [2.26, 928], [2.51, 957], [2.75, 987], [3.0, 1028], [3.25, 1083], [3.5, 1126], [3.76, 1140], [4.01, 1158], [4.25, 1179], [4.5, 1197], [4.75, 1194], [5.01, 1207], [5.25, 1222], [5.5, 1254], [5.76, 1268], [6.02, 1292], [6.26, 1310], [6.51, 1322], [6.76, 1325], [7.0, 1334], [7.25, 1364], [7.51, 1380], [7.76, 1374], [8.0, 1417], [8.26, 1401], [8.5, 1399], [8.75, 1365], [9.0, 1324], [9.25, 1286], [9.5, 1250], [9.75, 1201], [10.0, 1106], [10.25, 1037], [10.5, 988], [10.75, 936], [11.0, 889], [11.25, 854], [11.5, 819], [11.75, 808], [12.01, 813], [12.25, 805], [12.51, 806], [12.75, 808], [13.18, 807], [13.25, 808], [13.51, 813], [13.76, 812], [14.01, 810], [14.27, 811], [14.51, 812], [14.76, 811], [15.01, 810], [15.27, 816], [15.52, 819], [15.76, 836], [16.02, 828], [16.25, 834], [16.52, 831], [16.75, 835], [17.0, 838], [17.25, 826], [17.5, 827], [17.76, 847], [18.01, 867], [18.26, 868], [18.5, 892], [18.76, 915], [19.01, 962], [19.26, 970], [19.51, 935], [19.76, 943], [20.01, 964], [20.25, 973], [20.51, 982], [20.75, 983], [21.0, 989], [21.25, 994], [21.5, 983], [21.76, 978], [22.01, 967], [22.26, 960], [22.51, 925], [22.76, 895], [23.01, 852], [23.25, 827], [23.5, 850], [23.75, 839], [24.01, 823], [24.26, 827], [24.5, 837], [24.76, 843], [25.0, 845], [25.26, 834], [25.51, 851], [25.75, 839], [26.0, 843], [26.26, 873], [26.5, 847], [26.76, 823], [27.01, 819], [27.26, 823], [27.5, 810], [27.76, 810], [28.01, 815], [28.26, 818], [28.51, 822], [28.76, 830], [29.03, 836], [29.26, 839], [29.51, 844], [29.77, 847], [30.0, 849], [30.26, 846], [30.5, 870], [30.75, 917], [31.0, 989], [31.25, 1060], [31.5, 1127], [31.75, 1129], [32.0, 1158], [32.25, 1212], [32.5, 1270], [32.75, 1245], [33.0, 1291], [33.25, 1324], [33.5, 1361], [33.76, 1430], [34.01, 1493], [34.26, 1576], [34.51, 1608], [34.76, 1622], [35.0, 1675], [35.26, 1753], [35.5, 1861], [35.75, 1937], [36.01, 1877], [36.26, 1766], [36.51, 1663], [36.77, 1655], [37.0, 1611], [37.25, 1496], [37.5, 1396], [37.76, 1313], [38.01, 1272], [38.25, 1221], [38.51, 1169], [38.75, 1104], [39.01, 1035], [39.26, 1019], [39.51, 985], [39.76, 977], [40.0, 906], [40.26, 863], [40.5, 843], [40.75, 837], [41.01, 827], [41.25, 822], [41.51, 810], [41.76, 810], [42.0, 813], [42.25, 813], [42.5, 809], [42.76, 821], [43.0, 815], [43.25, 818], [43.5, 830], [43.75, 874], [44.02, 844], [44.26, 842], [44.51, 842], [44.76, 851], [45.01, 847], [45.27, 845], [45.51, 851], [45.75, 827], [46.0, 828], [46.26, 839], [46.51, 853], [46.75, 834], [47.01, 843], [47.25, 880], [47.5, 927], [47.76, 950], [48.0, 977], [48.25, 976], [48.5, 1035], [48.76, 1076], [49.0, 1091], [49.25, 1153], [49.5, 1178], [49.75, 1177], [50.0, 1180], [50.25, 1188], [50.5, 1174], [50.75, 1150], [51.0, 1161], [51.25, 1167], [51.5, 1176], [51.75, 1177], [52.0, 1173], [52.25, 1171], [52.51, 1158], [52.76, 1151], [53.0, 1147], [53.25, 1138], [53.5, 1120], [53.75, 1118], [54.0, 1110], [54.26, 1087], [54.5, 1091], [54.76, 1067], [55.01, 1052], [55.25, 1063], [55.5, 1117], [55.76, 1181], [56.01, 1237], [56.26, 1283], [56.5, 1350], [56.75, 1439], [57.0, 1522], [57.27, 1586], [57.51, 1606], [57.75, 1626], [58.01, 1689], [58.26, 1725], [58.51, 1700], [58.75, 1662], [59.0, 1690], [59.26, 1722], [59.51, 1763], [59.75, 1819], [60.0, 1914], [60.26, 1947], [60.5, 1904], [60.77, 1855], [61.01, 1824], [61.26, 1780], [61.51, 1728], [61.76, 1766], [62.0, 1710], [62.25, 1654], [62.5, 1580], [62.76, 1520], [63.01, 1470], [63.25, 1371], [63.51, 1287], [63.78, 1231], [64.0, 1167], [64.25, 1095], [64.5, 1052], [64.75, 1052], [65.0, 1059], [65.26, 1043], [65.51, 1038], [65.75, 1045], [66.0, 1057], [66.26, 1069], [66.5, 1080], [66.75, 1089], [67.01, 1078], [67.26, 1062], [67.5, 1044], [67.75, 1029], [68.0, 1013], [68.25, 1004], [68.5, 990], [68.75, 985], [69.0, 980], [69.26, 958], [69.5, 944], [69.76, 935], [70.0, 911], [70.27, 899], [70.51, 876], [70.76, 856], [71.01, 823], [71.28, 811], [71.51, 810], [71.77, 813], [72.01, 811], [72.25, 809], [72.51, 811], [72.77, 816], [73.0, 811], [73.26, 809], [73.5, 810], [73.76, 809], [74.0, 806], [74.27, 808], [74.51, 812], [74.75, 813], [75.01, 823], [75.26, 865], [75.5, 905], [75.76, 954], [76.0, 1013], [76.26, 1063], [76.5, 1142], [76.75, 1216], [77.0, 1267], [77.25, 1301], [77.5, 1335], [77.75, 1375], [78.0, 1402], [78.26, 1400], [78.51, 1399], [78.75, 1371], [79.0, 1378], [79.25, 1355], [79.5, 1337], [79.75, 1326], [80.01, 1313], [80.26, 1305], [80.5, 1288], [80.75, 1272], [81.01, 1240], [81.25, 1216], [81.52, 1201], [81.75, 1195], [82.01, 1187], [82.27, 1171], [82.51, 1149], [82.76, 1138], [83.0, 1115], [83.26, 1070], [83.5, 1010], [83.75, 973], [84.0, 950], [84.27, 917], [84.61, 889], [84.8, 879], [85.02, 895], [85.26, 881], [85.51, 857], [85.76, 836], [86.01, 818], [86.25, 798], [86.5, 785], [86.72, 795]], "map": [[-53.66679, -41.13364], [-53.66643, -41.13435], [-53.66718, -41.13526], [-53.66819, -41.13619], [-53.6693, -41.13619], [-53.67074, -41.1357], [-53.67192, -41.13535], [-53.67324, -41.13497], [-53.67447, -41.1347], [-53.67483, -41.13587], [-53.67497, -41.13718], [-53.67507, -41.13861], [-53.6762, -41.13846], [-53.67749, -41.13802], [-53.67843, -41.13871], [-53.6796, -41.13932], [-53.68076, -41.13954], [-53.68189, -41.13886], [-53.68232, -41.13908], [-53.68318, -41.13923], [-53.68341, -41.13985], [-53.68394, -41.14119], [-53.68457, -41.14214], [-53.68553, -41.14284], [-53.6865, -41.14362], [-53.68776, -41.14385], [-53.68876, -41.14451], [-53.68987, -41.14523], [-53.69103, -41.14583], [-53.69223, -41.14625], [-53.69349, -41.14643], [-53.69484, -41.14635], [-53.69619, -41.14603], [-53.69746, -41.14607], [-53.69875, -41.14622], [-53.70007, -41.14642], [-53.7014, -41.14641], [-53.70275, -41.14635], [-53.70402, -41.14606], [-53.70508, -41.14589], [-53.70654, -41.14582], [-53.70774, -41.14545], [-53.70824, -41.14424], [-53.70933, -41.14393], [-53.71058, -41.14448], [-53.71156, -41.14366], [-53.71272, -41.14344], [-53.71393, -41.1436], [-53.71505, -41.14401], [-53.71622, -41.14354], [-53.7172, -41.14419], [-53.717, -41.1453], [-53.71825, -41.14585], [-53.71913, -41.14676], [-53.72022, -41.14734], [-53.72129, -41.1478], [-53.72251, -41.14738], [-53.72328, -41.1464], [-53.72385, -41.14534], [-53.72445, -41.14441], [-53.72525, -41.14347], [-53.72578, -41.1424], [-53.72679, -41.14155], [-53.7275, -41.14048], [-53.72827, -41.1394], [-53.72888, -41.13935], [-53.72982, -41.14], [-53.73094, -41.1401], [-53.73211, -41.14014], [-53.73288, -41.14053], [-53.73408, -41.14038], [-53.73532, -41.14028], [-53.7366, -41.14033], [-53.7376, -41.13956], [-53.73886, -41.13977], [-53.73982, -41.13935], [-53.74085, -41.13958], [-53.74145, -41.13855], [-53.74261, -41.13872], [-53.74306, -41.13751], [-53.74244, -41.13642], [-53.74374, -41.13641], [-53.74389, -41.13735], [-53.74351, -41.13864], [-53.7432, -41.13996], [-53.74293, -41.14127], [-53.74226, -41.14503], [-53.74225, -41.14508], [-53.74218, -41.14528], [-53.742, -41.14666], [-53.7418, -41.14797], [-53.74188, -41.14938], [-53.74172, -41.15057], [-53.74236, -41.15165], [-53.74204, -41.15284], [-53.74129, -41.15405], [-53.74122, -41.15527], [-53.74135, -41.15664], [-53.74186, -41.15779], [-53.74218, -41.15909], [-53.74294, -41.1602], [-53.74325, -41.16111], [-53.74438, -41.16206], [-53.74533, -41.16303], [-53.74586, -41.16414], [-53.74588, -41.16549], [-53.74592, -41.16696], [-53.74605, -41.16813], [-53.74615, -41.16958], [-53.74611, -41.17091], [-53.74621, -41.17226], [-53.74645, -41.17351], [-53.7465, -41.17479], [-53.74659, -41.17641], [-53.74624, -41.17747], [-53.74527, -41.17822], [-53.7446, -41.17892], [-53.74545, -41.17954], [-53.74615, -41.18052], [-53.74687, -41.18155], [-53.74732, -41.18249], [-53.74649, -41.18341], [-53.74617, -41.18445], [-53.74648, -41.18567], [-53.74677, -41.18699], [-53.74717, -41.18827], [-53.74779, -41.18948], [-53.7488, -41.19023], [-53.7493, -41.19146], [-53.74981, -41.19275], [-53.75013, -41.19393], [-53.75047, -41.19524], [-53.75105, -41.19635], [-53.75191, -41.19728], [-53.75295, -41.19802], [-53.7537, -41.19888], [-53.75455, -41.1999], [-53.75545, -41.20065], [-53.75607, -41.2018], [-53.75675, -41.20289], [-53.75781, -41.20358], [-53.75872, -41.2045], [-53.75926, -41.20566], [-53.75962, -41.2069], [-53.75997, -41.20801], [-53.76078, -41.20896], [-53.76104, -41.21021], [-53.76159, -41.2113], [-53.76224, -41.21224], [-53.76174, -41.21314], [-53.76148, -41.21387], [-53.76216, -41.21449], [-53.76154, -41.21527], [-53.76105, -41.21626], [-53.76073, -41.21688], [-53.7604, -41.21799], [-53.76105, -41.21891], [-53.762, -41.21963], [-53.76297, -41.22053], [-53.76386, -41.2216], [-53.76492, -41.22232], [-53.76584, -41.22196], [-53.76706, -41.22167], [-53.76816, -41.22217], [-53.76922, -41.22294], [-53.76977, -41.22417], [-53.77065, -41.2251], [-53.77143, -41.22613], [-53.77223, -41.22716], [-53.77335, -41.22794], [-53.77406, -41.22897], [-53.77492, -41.22981], [-53.77558, -41.2306], [-53.77642, -41.23164], [-53.77735, -41.23264], [-53.77859, -41.23321], [-53.77963, -41.23385], [-53.77944, -41.23463], [-53.78005, -41.23575], [-53.781, -41.23664], [-53.78218, -41.23721], [-53.78293, -41.23823], [-53.78334, -41.23935], [-53.78282, -41.24051], [-53.78187, -41.24167], [-53.78072, -41.24219], [-53.77963, -41.2424], [-53.77886, -41.24329], [-53.77755, -41.24386], [-53.77679, -41.24466], [-53.7754, -41.24503], [-53.77479, -41.2458], [-53.77554, -41.24683], [-53.77637, -41.24789], [-53.77738, -41.24879], [-53.77846, -41.24964], [-53.77968, -41.25033], [-53.77961, -41.25151], [-53.78027, -41.25269], [-53.77931, -41.25239], [-53.77817, -41.25185], [-53.77689, -41.25122], [-53.77585, -41.2513], [-53.77524, -41.25191], [-53.77531, -41.25327], [-53.77472, -41.25386], [-53.77345, -41.25365], [-53.77245, -41.25389], [-53.77176, -41.25444], [-53.77088, -41.2549], [-53.76983, -41.25507], [-53.76912, -41.25598], [-53.76843, -41.25704], [-53.76763, -41.25764], [-53.76662, -41.25807], [-53.76538, -41.25822], [-53.76434, -41.2579], [-53.76406, -41.25699], [-53.76441, -41.25583], [-53.76414, -41.25484], [-53.7633, -41.25569], [-53.76294, -41.25692], [-53.76214, -41.25811], [-53.76111, -41.25833], [-53.76001, -41.25789], [-53.75879, -41.25793], [-53.75871, -41.25917], [-53.75801, -41.25966], [-53.75725, -41.26021], [-53.75606, -41.26011], [-53.75563, -41.26137], [-53.7558, -41.26264], [-53.75522, -41.26368], [-53.75453, -41.26433], [-53.75333, -41.2643], [-53.75209, -41.26393], [-53.75074, -41.26395], [-53.74963, -41.2632], [-53.74859, -41.26237], [-53.74845, -41.26107], [-53.74908, -41.25987], [-53.74935, -41.25862], [-53.75028, -41.25763], [-53.75146, -41.25741], [-53.75264, -41.25798], [-53.75384, -41.25881], [-53.75494, -41.25928], [-53.75611, -41.25892], [-53.75658, -41.25781], [-53.7576, -41.25706], [-53.75879, -41.25675], [-53.75999, -41.25636], [-53.76131, -41.25621], [-53.76172, -41.25504], [-53.76223, -41.25377], [-53.76265, -41.25252], [-53.76291, -41.25122], [-53.76379, -41.25029], [-53.76494, -41.25092], [-53.76623, -41.2512], [-53.76727, -41.2505], [-53.76833, -41.2512], [-53.76929, -41.25213], [-53.77054, -41.2524], [-53.7718, -41.25277], [-53.77304, -41.25336], [-53.77424, -41.25384], [-53.77519, -41.25363], [-53.77534, -41.2524], [-53.77541, -41.25127], [-53.77583, -41.25006], [-53.77568, -41.24863], [-53.77514, -41.24762], [-53.77484, -41.24639], [-53.77387, -41.24589], [-53.77293, -41.2454], [-53.77354, -41.24454], [-53.77465, -41.2442], [-53.77581, -41.24319], [-53.77701, -41.24294], [-53.77816, -41.24273], [-53.77982, -41.24232], [-53.78082, -41.24217], [-53.78201, -41.24159], [-53.78292, -41.24031], [-53.78337, -41.23927], [-53.78298, -41.23827], [-53.78215, -41.23719], [-53.78101, -41.23664], [-53.78007, -41.23578], [-53.7794, -41.23472], [-53.77975, -41.2339], [-53.77862, -41.23322], [-53.7774, -41.23267], [-53.77646, -41.23167], [-53.77562, -41.23069], [-53.77482, -41.22998], [-53.77414, -41.22912], [-53.77343, -41.228], [-53.77237, -41.2274], [-53.77159, -41.22623], [-53.77076, -41.22526], [-53.76991, -41.22428], [-53.76927, -41.22315], [-53.76834, -41.22227], [-53.76729, -41.22165], [-53.76609, -41.22198], [-53.76513, -41.22219], [-53.76396, -41.22175], [-53.76316, -41.22074], [-53.76215, -41.21981], [-53.76117, -41.21915], [-53.76036, -41.21825], [-53.76053, -41.21705], [-53.76073, -41.21623], [-53.76148, -41.21563], [-53.76194, -41.21486], [-53.76189, -41.21394], [-53.76163, -41.21337], [-53.76191, -41.21256], [-53.76204, -41.21149], [-53.76132, -41.21055], [-53.7626, -41.21048], [-53.76394, -41.21053], [-53.76527, -41.21065], [-53.76661, -41.21077], [-53.76791, -41.21082], [-53.76917, -41.21045], [-53.7704, -41.21006], [-53.77159, -41.20958], [-53.77027, -41.20939], [-53.76895, -41.20938], [-53.76762, -41.20935], [-53.76656, -41.20872], [-53.76615, -41.2075], [-53.7657, -41.20633], [-53.76477, -41.20547], [-53.76449, -41.20428], [-53.76345, -41.20356], [-53.76325, -41.20241], [-53.76247, -41.20141], [-53.76206, -41.20017], [-53.76191, -41.19894], [-53.76194, -41.19756], [-53.76199, -41.19623], [-53.76227, -41.19509], [-53.76243, -41.19379], [-53.76288, -41.1925], [-53.76344, -41.19129], [-53.76397, -41.19013], [-53.76438, -41.18887], [-53.76454, -41.18758], [-53.76519, -41.18647], [-53.76557, -41.18527], [-53.76574, -41.18395], [-53.76539, -41.1827], [-53.76519, -41.18155], [-53.76551, -41.18047], [-53.76583, -41.17928], [-53.76591, -41.17784], [-53.76614, -41.17662], [-53.76647, -41.17589], [-53.76702, -41.17467], [-53.76737, -41.17347], [-53.76739, -41.17223], [-53.76692, -41.17113], [-53.76646, -41.16986], [-53.76646, -41.16858], [-53.76729, -41.16815], [-53.76832, -41.16907], [-53.76957, -41.16895], [-53.77085, -41.16856], [-53.772, -41.16837], [-53.77295, -41.1692], [-53.7736, -41.1692], [-53.7744, -41.16882], [-53.77542, -41.16938], [-53.77629, -41.17006], [-53.77732, -41.17049], [-53.77852, -41.17003], [-53.77915, -41.17069], [-53.78049, -41.17075], [-53.78162, -41.1702], [-53.78291, -41.17023], [-53.78414, -41.17003], [-53.78529, -41.16951], [-53.78634, -41.17028], [-53.7877, -41.17092], [-53.78888, -41.17129], [-53.79019, -41.17119], [-53.79095, -41.17051], [-53.79004, -41.1695], [-53.78951, -41.16828], [-53.78996, -41.16834], [-53.79086, -41.16781], [-53.79151, -41.16674], [-53.79178, -41.16554], [-53.79208, -41.16466], [-53.79313, -41.16472], [-53.79425, -41.16413], [-53.79535, -41.16343], [-53.79657, -41.16295], [-53.79648, -41.16173], [-53.79569, -41.16117], [-53.79482, -41.16013], [-53.79345, -41.15953], [-53.79232, -41.15892], [-53.79161, -41.15789], [-53.79051, -41.15708], [-53.78938, -41.15714], [-53.7881, -41.15716], [-53.78687, -41.15674], [-53.78564, -41.1567], [-53.78455, -41.15673], [-53.78346, -41.15716], [-53.78317, -41.1584], [-53.78203, -41.159], [-53.78069, -41.15929], [-53.77955, -41.15927], [-53.77899, -41.1591], [-53.7786, -41.16023], [-53.77759, -41.16099], [-53.77642, -41.16153], [-53.77506, -41.162], [-53.77398, -41.16269], [-53.77265, -41.16269], [-53.77146, -41.16316], [-53.7707, -41.1638], [-53.76953, -41.16397], [-53.76869, -41.1648], [-53.76797, -41.16577], [-53.76689, -41.16648], [-53.76618, -41.16743], [-53.76517, -41.16829], [-53.76491, -41.1693], [-53.76396, -41.1703], [-53.76302, -41.17125], [-53.76205, -41.17212], [-53.76091, -41.17301], [-53.76022, -41.17412], [-53.75944, -41.17514], [-53.75862, -41.1764], [-53.75792, -41.17743], [-53.75789, -41.17872], [-53.75698, -41.17977], [-53.75605, -41.1805], [-53.75464, -41.18052], [-53.75342, -41.18015], [-53.75316, -41.17893], [-53.75272, -41.17764], [-53.75211, -41.17656], [-53.75141, -41.17529], [-53.7507, -41.17426], [-53.75021, -41.17295], [-53.75008, -41.1724], [-53.75017, -41.17374], [-53.75054, -41.17508], [-53.75073, -41.17637], [-53.75127, -41.17759], [-53.7514, -41.17853], [-53.75098, -41.17727], [-53.75002, -41.1764], [-53.74932, -41.17529], [-53.74866, -41.1742], [-53.74851, -41.17283], [-53.74838, -41.17148], [-53.74781, -41.17029], [-53.74767, -41.16904], [-53.74776, -41.16765], [-53.7476, -41.16642], [-53.74739, -41.16512], [-53.74701, -41.16383], [-53.74666, -41.16259], [-53.74565, -41.16171], [-53.74438, -41.16141], [-53.74284, -41.161], [-53.74278, -41.15991], [-53.74201, -41.15869], [-53.74179, -41.15738], [-53.74124, -41.1564], [-53.74122, -41.15499], [-53.74138, -41.15365], [-53.74222, -41.15251], [-53.74239, -41.15126], [-53.74169, -41.15034], [-53.74192, -41.14887], [-53.74181, -41.14769], [-53.74203, -41.1464], [-53.74227, -41.145], [-53.74247, -41.14378], [-53.74268, -41.14244], [-53.74295, -41.14115], [-53.74325, -41.13975], [-53.74355, -41.13851], [-53.74395, -41.13714], [-53.74348, -41.13645], [-53.74237, -41.13654], [-53.74311, -41.13761], [-53.74251, -41.13872], [-53.74138, -41.13865], [-53.74074, -41.13973], [-53.73974, -41.13933], [-53.73875, -41.13974], [-53.73756, -41.13958], [-53.73656, -41.14032], [-53.73524, -41.14027], [-53.73401, -41.14043], [-53.73273, -41.14048], [-53.73209, -41.14014], [-53.73091, -41.1401], [-53.72983, -41.14006], [-53.72893, -41.13935], [-53.72828, -41.13939], [-53.72756, -41.1404], [-53.72684, -41.14151], [-53.72589, -41.14235], [-53.72526, -41.14336], [-53.72453, -41.14433], [-53.72394, -41.14516], [-53.72341, -41.14629], [-53.72257, -41.14724], [-53.72137, -41.14773], [-53.72036, -41.14748], [-53.71924, -41.14696], [-53.71838, -41.14596], [-53.71722, -41.14542], [-53.7172, -41.1444], [-53.71646, -41.14351], [-53.71523, -41.14396], [-53.7141, -41.14371], [-53.71291, -41.14351], [-53.71166, -41.14352], [-53.7108, -41.1445], [-53.70955, -41.14407], [-53.70838, -41.14409], [-53.7078, -41.14538], [-53.70649, -41.14583], [-53.70531, -41.14591], [-53.70414, -41.14593], [-53.70295, -41.14633], [-53.70151, -41.1464], [-53.70016, -41.14641], [-53.69896, -41.14624], [-53.69754, -41.14608], [-53.6961, -41.14604], [-53.69499, -41.1463], [-53.69365, -41.14643], [-53.69237, -41.14632], [-53.6911, -41.14581], [-53.69002, -41.14533], [-53.68886, -41.14458], [-53.6879, -41.1438], [-53.68662, -41.14366], [-53.68565, -41.14287], [-53.68458, -41.14234], [-53.68396, -41.14123], [-53.68342, -41.14002], [-53.68336, -41.13913], [-53.68252, -41.13901], [-53.68209, -41.13879], [-53.68093, -41.13946], [-53.67953, -41.13928], [-53.67858, -41.13873], [-53.67761, -41.13799], [-53.67627, -41.13844], [-53.67503, -41.13825], [-53.67498, -41.13723], [-53.67484, -41.13597], [-53.67467, -41.13467], [-53.67331, -41.13496], [-53.67198, -41.13534], [-53.67066, -41.13571], [-53.67, -41.13536], [-53.66977, -41.13481], [-53.66887, -41.13429], [-53.66795, -41.13348], [-53.66725, -41.13276], [-53.66677, -41.13308], [-53.66662, -41.13363]]};
+const P = [
+ // nombre, km, alt, d+, d-, primero (min desde 05:00), corte (texto), corte (min desde 05:00), gpx km, tipo, servicios
+ ["Centro Cívico · largada",0,795,0,0,0,null,null,0,"pa",["carga","baño","emergencia"]],
+ ["Cerro Otto",8,1417,669,49,42,null,null,8.0,"paso",[]],
+ ["Tronador",12.1,812,669,655,60,null,null,12.01,"pa",["avituallamiento","baño","emergencia"]],
+ ["Julio Felley",17.4,824,729,701,79,null,null,17.25,"pa",["bus","avituallamiento","baño","emergencia"]],
+ ["Chitaka",28.7,822,1129,1104,136,"sáb 10:40",340,28.51,"pa",["avituallamiento","baño","emergencia"]],
+ ["PC Pontoneros",36.2,1932,2291,1156,206,null,null,35.75,"pc",[]],
+ ["Los Baqueanos",42.3,815,2306,2290,241,"sáb 14:30",570,42.0,"pa",["bus","carga","comida caliente","baño","emergencia"]],
+ ["Picada Frey",48.9,965,2639,2469,282,null,null,48.25,"paso",[]],
+ ["El Chúcaro",56.1,1054,2998,2739,327,"sáb 18:00",780,55.01,"as",["carga","bus","bolsas","comida caliente","baño","emergencia"]],
+ ["PC Lynch",61.5,1916,3974,2849,394,null,null,60.0,"pc",[]],
+ ["Refugio Cazadores",66.2,1060,4020,3756,426,"sáb 22:00",1020,65.0,"pa",["carga","bus","comida caliente","baño","emergencia"]],
+ ["Trypay Antú",75.6,813,4086,4068,473,"sáb 23:30",1110,74.75,"pa",["avituallamiento","baño","emergencia"]],
+ ["Cerro Otto",79.8,1414,4690,4073,519,null,null,78.0,"paso",[]],
+ ["Centro Cívico · llegada",88.2,795,4759,4759,571,"dom 03:00",1320,RUTA.total,"pa",["carga","comida caliente","baño","emergencia"]],
+];
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs={}, parent) => { const e=document.createElementNS(NS,tag); for (const k in attrs) e.setAttribute(k,attrs[k]); if(parent) parent.appendChild(e); return e; };
+const css = v => getComputedStyle(document.documentElement).getPropertyValue(v).trim();
+const hhmm = m => { m=Math.round(m); const d=Math.floor((m+300)/1440); const t=((m+300)%1440+1440)%1440; return (d? "dom ":"sáb ")+String(Math.floor(t/60)).padStart(2,"0")+":"+String(t%60).padStart(2,"0"); };
+/* plan en minutos desde la largada; los puntos sin dato se interpolan con los tiempos del primer corredor */
+const PLANK = {0:0,2:100,3:135,4:226,6:389,8:524,10:655,11:727,13:856};
+const PLAN_MIN = P.map((p,i)=>{
+  if (PLANK[i]!=null) return PLANK[i];
+  let a=i-1; while(PLANK[a]==null) a--; let b=i+1; while(PLANK[b]==null) b++;
+  return PLANK[a]+(PLANK[b]-PLANK[a])*(P[i][5]-P[a][5])/(P[b][5]-P[a][5]);
+});
+const PLAN_TOTAL = 856;
+let TOTAL = 856;
+/* sin ajuste: escenario proporcional. Con ajuste real: hasta el punto informado se reparte el retraso;
+   desde ahí, cada punto = hora del plan + el mismo retraso (o adelanto). */
+const eta = i => {
+  if (AJ) { const k=PLAN_MIN[AJ.i]; return i<=AJ.i ? PLAN_MIN[i]*AJ.t/k : PLAN_MIN[i]+(AJ.t-k); }
+  return PLAN_MIN[i]*TOTAL/PLAN_TOTAL;
+};
+const hm = m => hhmm(m).slice(4);
+const falta = m => { m=Math.max(1,Math.round(m)); return m<60?`${m} min`:`${Math.floor(m/60)} h ${String(m%60).padStart(2,"0")} min`; };
+const esPuesto = i => P[i][9]==="pa"||P[i][9]==="as";
+const dur = m => { m=Math.round(m); return Math.floor(m/60)+":"+String(m%60).padStart(2,"0"); };
+const fk = v => String(v).replace(".",",");
+const PUB = {0:null,6:"https://maps.app.goo.gl/A7KVJVJPf12kUdNf8",8:"https://maps.app.goo.gl/5XjkG8amFYgqVZv87",10:"https://maps.app.goo.gl/nN2tu8TufMncAef97",11:"https://maps.app.goo.gl/QvaNuMmbNQZUQhR88",13:null};
+const NOMBRE = i => ({0:"Centro Cívico · largada",13:"Centro Cívico · llegada",11:"Trypay Antú (Ciclovía Trypay)"})[i] || P[i][0];
+const ETAPAS = [
+  {t:"Otto",a:0,b:4,txt:"Subida nocturna al Cerro Otto con frontal, bajada a Tronador y tramo ondulado hasta Chitaka."},
+  {t:"Pontoneros",a:4,b:6,txt:"Primera subida larga, hasta 1932 m, y bajada a Los Baqueanos sobre la RN 40."},
+  {t:"Catedral",a:6,b:10,txt:"Picada Frey, asistencia en El Chúcaro y subida al Lynch (1916 m), la más exigente."},
+  {t:"Regreso",a:10,b:13,txt:"Ciclovía Trypay, segunda subida al Otto y bajada al Centro Cívico."},
+];
+let NOW_T = null, AJ = null; // AJ = {i, h:"HH:MM", t: minutos reales}
+
+function etapas(){
+  document.getElementById("etapas").innerHTML=ETAPAS.map((e,k)=>{
+    const A=P[e.a], B=P[e.b];
+    return `<div><span class="n">Etapa ${k+1}</span><span class="t">${e.t}</span>
+      <span class="d">km ${fk(A[1])}–${fk(B[1])} · ${fk(Math.round((B[1]-A[1])*10)/10)} km</span>
+      <span class="d">+${B[3]-A[3]} m / −${B[4]-A[4]} m</span>
+      <span class="h">${hm(eta(e.a))} → ${hm(eta(e.b))} · ${dur(eta(e.b)-eta(e.a))} h</span><p>${e.txt}</p></div>`;
+  }).join("");
+}
+function tabla(){
+  const nx = NOW_T==null?null:P.findIndex((_,i)=>eta(i)>NOW_T);
+  let h="<tr><th>Punto</th><th>Km</th><th>Alt. (m)</th><th>D+ acum.</th><th>Hora estimada</th><th>Corte</th><th>Público</th></tr>", l="";
+  P.forEach((p,i)=>{
+    const pub = i in PUB, pc = p[9]==="paso"||p[9]==="pc", done = NOW_T!=null && eta(i)<NOW_T, next = i===nx;
+    const cls = `${pub?"pub":""} ${pc?"pc":""} ${done?"done":""} ${next?"next":""}`;
+    const acc = !pub?"—":PUB[i]?`<a href="${PUB[i]}" target="_blank" rel="noopener">Ubicación ↗</a>`:"Bv. Independencia y Libertad";
+    const tags = (i===8?' <span class="pill ok">asistencia</span>':"")+(next?`<span class="tagn">próximo · en ${falta(eta(i)-NOW_T)}</span>`:"");
+    h+=`<tr class="${cls}"><td>${NOMBRE(i)}${tags}</td><td class="tab">${fk(p[1])}</td><td class="tab">${p[2]}</td><td class="tab">${p[3]}</td><td class="tab hora">${hm(eta(i))}${pc?' <small style="color:var(--muted);font-weight:400">aprox.</small>':""}</td><td class="tab">${p[6]?p[6].replace("sáb ",""):""}</td><td>${acc}</td></tr>`;
+    const corte = p[6]?` · corte ${p[6].replace("sáb ","")}`:"";
+    const lnk = pub&&PUB[i]?` · <a href="${PUB[i]}" target="_blank" rel="noopener">ubicación ↗</a>`:"";
+    l+=`<li class="${cls}"><div class="h">${hm(eta(i))}${pc?"<small>aprox.</small>":""}</div><div><div class="n">${NOMBRE(i)}${tags}</div><div class="m">km ${fk(p[1])} · ${p[2]} m${corte}${pub?" · con público":""}${lnk}</div></div></li>`;
+  });
+  document.getElementById("tpaso").innerHTML=h;
+  document.getElementById("lpaso").innerHTML=l;
+}
+function fechas(){
+  document.getElementById("f-obj").innerHTML=`${dur(TOTAL)} <small>h</small>`;
+  document.getElementById("f-obj-k").textContent = TOTAL===PLAN_TOTAL?"Tiempo objetivo":"Tiempo proyectado";
+  document.getElementById("f-lleg").innerHTML=`${hm(eta(13))} <small>sáb 21</small>`;
+  document.getElementById("chu-hora").innerHTML=`Paso estimado: <b>${hm(eta(8))}</b>. Corte del puesto: 18:00.`;
+}
+/* perfil: se dibuja a la medida real del contenedor, así el texto conserva su tamaño en el celular */
+let G=null;
+function perfilS(){
+  const s=document.getElementById("perfil"); s.innerHTML="";
+  const W=Math.max(300, Math.round(s.parentNode.clientWidth - 2*parseFloat(getComputedStyle(s.parentNode).paddingLeft||0)));
+  const narrow=W<640, H=narrow?220:300, L=narrow?32:46, R=narrow?8:14, T=narrow?26:34, B=28, ymin=700, ymax=2100, xmax=RUTA.total;
+  G={W,H,L,R,T,B,narrow,ymin,ymax};
+  s.setAttribute("viewBox",`0 0 ${W} ${H}`);
+  const x=k=>L+(k/xmax)*(W-L-R), y=a=>T+(1-(a-ymin)/(ymax-ymin))*(H-T-B), fs=narrow?10:11;
+  for(let a=800;a<=2000;a+=400){ el("line",{x1:L,x2:W-R,y1:y(a),y2:y(a),stroke:css("--line"),"stroke-width":1},s); const t=el("text",{x:L-4,y:y(a)+4,"text-anchor":"end","font-size":fs},s); t.textContent=a; }
+  for(let k=0;k<=80;k+=narrow?20:10){ const t=el("text",{x:x(k),y:H-8,"text-anchor":"middle","font-size":fs},s); t.textContent=k+(narrow?"":" km"); }
+  const pts=RUTA.prof.map(([k,a])=>x(k).toFixed(1)+","+y(a).toFixed(1)).join(" ");
+  el("polygon",{points:`${x(0)},${y(ymin)} ${pts} ${x(xmax)},${y(ymin)}`,fill:css("--green"),"fill-opacity":.28},s);
+  el("polyline",{points:pts,fill:"none",stroke:css("--green-ink"),"stroke-width":2,"stroke-linejoin":"round"},s);
+  P.forEach((p,i)=>{
+    const cx=x(p[8]), cy=y(p[2]);
+    if(p[7]!=null){
+      const fin=i===P.length-1;
+      el("line",{x1:cx,x2:cx,y1:cy,y2:T-2,stroke:css("--bad"),"stroke-width":1.2,"stroke-dasharray":"3 3"},s);
+      const b=el("text",{x:cx,y:T-8,"text-anchor":i===P.length-1?"end":"middle","font-size":narrow?9:10,"font-weight":700,fill:css("--bad")},s);
+      b.textContent=(narrow&&fin)?"":p[6].replace("sáb ","").replace("dom ","d ");
+    }
+    const pub = i in PUB;
+    el("circle",{cx,cy,r:pub?(narrow?4.5:5.5):3.2,fill:i===8?css("--teal"):pub?css("--green"):css("--navy"),stroke:css("--surface"),"stroke-width":1.5},s);
+    const peak = p[2]>1300;
+    if(peak || (!narrow && i>0 && i<P.length-1)){
+      const t=el("text",{x:cx,y:peak?cy-8:cy+16,"text-anchor":"middle","font-size":narrow?9.5:10.5,"font-weight":600,fill:css("--ink")},s);
+      t.textContent=p[0].replace("PC ","").replace("Julio ","").replace("Refugio ","");
+    }
+  });
+  if(!narrow){ const t=el("text",{x:L,y:12,"font-size":fs},s); t.textContent="Altitud (m) · horas de corte arriba · km abajo"; }
+}
+function marca(){
+  const s=document.getElementById("perfil");
+  ["#avance","#pos"].forEach(q=>{ const o=s.querySelector(q); if(o) o.remove(); });
+  if(!G || NOW_T==null) return;
+  const fin = NOW_T>=eta(13);
+  let gk = RUTA.total;
+  if(!fin){
+    let a=0; while(a<P.length-1 && eta(a+1)<=NOW_T) a++;
+    const f=(NOW_T-eta(a))/(eta(a+1)-eta(a)); gk=P[a][8]+(P[a+1][8]-P[a][8])*f;
+  }
+  const X=k=>G.L+(k/RUTA.total)*(G.W-G.L-G.R), Y=e=>G.T+(1-(e-G.ymin)/(G.ymax-G.ymin))*(G.H-G.T-G.B);
+  // altura del perfil en el km estimado
+  const pr=RUTA.prof; let j=0; while(j<pr.length-2 && pr[j+1][0]<gk) j++;
+  const t=(gk-pr[j][0])/((pr[j+1][0]-pr[j][0])||1), ele=pr[j][1]+(pr[j+1][1]-pr[j][1])*Math.max(0,Math.min(1,t));
+  // tramo recorrido pintado, debajo de los puntos de los puestos
+  const hecho=pr.filter(q=>q[0]<=gk).map(([k,e])=>X(k).toFixed(1)+","+Y(e).toFixed(1));
+  hecho.push(X(gk).toFixed(1)+","+Y(ele).toFixed(1));
+  const g1=el("g",{id:"avance"});
+  el("polygon",{points:`${X(0)},${Y(G.ymin)} ${hecho.join(" ")} ${X(gk).toFixed(1)},${Y(G.ymin)}`,fill:css("--green"),"fill-opacity":.75},g1);
+  el("polyline",{points:hecho.join(" "),fill:"none",stroke:css("--green-ink"),"stroke-width":3,"stroke-linejoin":"round"},g1);
+  const primero=s.querySelector("circle"); s.insertBefore(g1, primero);
+  if(fin) return;
+  // punto de posición estimada
+  const x=X(gk), y=Y(ele), der=x>G.W*0.72;
+  const g=el("g",{id:"pos"},s);
+  el("line",{x1:x,x2:x,y1:y,y2:G.H-G.B,stroke:css("--ink"),"stroke-width":1,"stroke-dasharray":"2 3"},g);
+  el("circle",{cx:x,cy:y,r:11,fill:css("--ink"),"fill-opacity":.18,class:"pulso"},g);
+  el("circle",{cx:x,cy:y,r:G.narrow?5.5:6.5,fill:css("--ink"),stroke:css("--surface"),"stroke-width":2.5},g);
+  const lb=el("text",{x:x+(der?-12:12),y:y-16,"text-anchor":der?"end":"start","font-size":G.narrow?10:11,"font-weight":700,fill:css("--ink")},g);
+  lb.textContent=`ahora · km ${fk(Math.round(P[0][1]+gk/RUTA.total*88.2))}`;
+  const bb=lb.getBBox();
+  const fondo=el("rect",{x:bb.x-5,y:bb.y-3,width:bb.width+10,height:bb.height+6,rx:3,fill:css("--surface"),stroke:css("--ink"),"stroke-width":1});
+  g.insertBefore(fondo, lb);
+}
+const START=Date.parse("2026-11-21T05:00:00-03:00"), END=Date.parse("2026-11-22T03:00:00-03:00");
+function estado(){
+  const now=Date.now();
+  const k=document.getElementById("now-k"), big=document.getElementById("now-big"), s2=document.getElementById("now-s2"), txt=document.getElementById("now-txt"), sub=document.getElementById("now-sub"), bar=document.getElementById("now-bar");
+  if(now<START){
+    NOW_T=null;
+    document.getElementById("now-next").hidden=true;
+    k.textContent="Estado"; big.textContent="Pre-carrera"; s2.textContent="km 0 de 88,2";
+    txt.innerHTML=`Largada sáb 21 a las 05:00, Centro Cívico. Llegada estimada <b>${hm(eta(13))}</b> (${dur(TOTAL)} h).`;
+    sub.textContent="Desde la largada, este bloque muestra el kilómetro estimado, el tramo y el próximo punto con público."; bar.style.width="0%";
+  } else {
+    NOW_T=(now-START)/60000;
+    if(NOW_T>=eta(13)){
+      document.getElementById("now-next").hidden=true;
+      k.textContent=AJ?"Según el ajuste":"Según el plan"; big.textContent="Llegada"; s2.textContent=`estimada ${hm(eta(13))}`;
+      txt.innerHTML=`${AJ?"Con el ajuste":"Por el plan"} ya debería haber llegado. Confirmar en LiveTrail.`; sub.textContent=""; bar.style.width="100%";
+    } else {
+      let a=0; while(a<P.length-1 && eta(a+1)<=NOW_T) a++;
+      const b=a+1, f=(NOW_T-eta(a))/(eta(b)-eta(a)), km=P[a][1]+(P[b][1]-P[a][1])*f;
+      const np=P.findIndex((_,i)=>esPuesto(i)&&eta(i)>NOW_T), nn=document.getElementById("now-next");
+      if(np>=0){ nn.hidden=false; nn.textContent=`Próximo puesto: ${NOMBRE(np)} en ${falta(eta(np)-NOW_T)} (${hm(eta(np))})`; } else nn.hidden=true;
+      k.textContent="Km estimado"; big.textContent=`km ${fk(Math.round(km*10)/10)}`; s2.textContent=`de 88,2 · ${Math.round(km/88.2*100)} %`;
+      txt.innerHTML=`Tramo <b>${NOMBRE(a)} → ${NOMBRE(b)}</b>. Paso estimado por ${NOMBRE(b)}: <b>${hm(eta(b))}</b>.`;
+      const nx=Object.keys(PUB).map(Number).find(i=>eta(i)>NOW_T);
+      sub.textContent = nx!=null?`Próximo punto con público: ${NOMBRE(nx)}, ${hm(eta(nx))}.`:"";
+      bar.style.width=(km/88.2*100).toFixed(1)+"%";
+    }
+  }
+  tabla(); marca();
+}
+
+/* clima */
+const WX = {"consulta": "16/11 16:45", "niveles": [795, 1400, 1916], "amanecer": "06:12", "atardecer": "20:50", "t": [[8.0, 7.5, 7.0, 6.7, 6.6, 6.6, 6.8, 7.2, 7.8, 8.5, 9.2, 10.1, 10.9, 11.8, 12.6, 13.1, 12.9, 12.4, 11.7, 10.8, 9.7, 8.8, 8.1, 7.6], [4.0, 3.6, 3.1, 2.8, 2.7, 2.7, 2.9, 3.3, 3.9, 4.5, 5.3, 6.1, 6.9, 7.8, 8.7, 9.1, 9.0, 8.4, 7.7, 6.8, 5.8, 4.8, 4.1, 3.6], [0.3, -0.2, -0.7, -1.1, -1.3, -1.4, -1.4, -1.2, -0.9, -0.4, 0.2, 0.9, 1.7, 2.8, 3.9, 4.6, 4.4, 3.8, 3.0, 2.0, 0.7, -0.3, -1.0, -1.5]], "at": [[5.0, 4.6, 4.3, 4.1, 4.0, 4.1, 4.2, 4.2, 4.3, 4.6, 5.1, 6.4, 7.7, 9.2, 9.7, 9.6, 8.8, 7.5, 6.4, 5.9, 5.4, 4.9, 4.3, 3.8], [0.2, -0.1, -0.4, -0.6, -0.7, -0.6, -0.5, -0.4, -0.3, -0.0, 0.6, 1.8, 3.2, 4.7, 5.3, 5.2, 4.3, 3.1, 1.9, 1.4, 0.9, 0.3, -0.2, -0.7], [-2.5, -3.0, -3.7, -4.2, -4.5, -4.7, -4.8, -4.8, -4.7, -4.5, -4.1, -3.6, -2.3, -0.6, 0.4, 0.6, -0.2, -1.5, -2.6, -3.3, -4.1, -4.8, -5.2, -5.6]], "pp": [[18, 18, 20, 22, 25, 28, 31, 32, 31, 31, 30, 28, 29, 36, 46, 53, 54, 52, 47, 37, 24, 14, 9, 7], [22, 21, 21, 22, 24, 27, 29, 29, 28, 27, 26, 26, 27, 32, 38, 41, 39, 33, 27, 21, 14, 10, 10, 11], [35, 32, 28, 25, 26, 28, 31, 36, 41, 45, 46, 47, 47, 48, 49, 51, 55, 60, 61, 56, 46, 37, 28, 19]], "mm": [[0.3, 0.3, 0.3, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.3, 0.3, 0.3, 0.3, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.3, 0.5, 0.5, 0.5, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]], "w": [[14.9, 14.0, 12.4, 11.2, 10.5, 10.0, 10.2, 11.7, 14.1, 15.9, 16.6, 16.8, 17.5, 19.1, 20.9, 22.2, 22.7, 22.7, 22.0, 19.6, 16.6, 14.2, 13.7, 14.0], [14.9, 14.0, 12.4, 11.2, 10.5, 10.0, 10.2, 11.7, 14.1, 15.9, 16.6, 16.8, 17.5, 19.1, 20.9, 22.2, 22.7, 22.7, 22.0, 19.6, 16.6, 14.2, 13.7, 14.0], [4.8, 4.7, 5.1, 5.9, 6.1, 6.1, 6.6, 7.8, 9.5, 11.2, 12.6, 14.0, 15.5, 17.4, 19.2, 20.4, 20.5, 20.2, 19.2, 17.2, 14.9, 12.9, 11.6, 10.5]], "g": [[34.6, 34.2, 36.4, 36.7, 33.1, 27.7, 25.2, 28.1, 33.8, 38.5, 40.7, 42.5, 44.3, 47.5, 51.5, 54.0, 54.7, 54.4, 53.6, 53.6, 53.3, 51.5, 46.4, 40.0], [34.6, 34.2, 36.4, 36.7, 33.1, 27.7, 25.2, 28.1, 33.8, 38.5, 40.7, 42.5, 44.3, 47.5, 51.5, 54.0, 54.7, 54.4, 53.6, 53.6, 53.3, 51.5, 46.4, 40.0], [34.9, 33.5, 34.2, 36.0, 38.2, 40.7, 43.6, 46.4, 49.0, 52.2, 55.8, 59.4, 63.4, 67.7, 71.6, 74.5, 75.2, 74.9, 74.2, 73.8, 73.1, 70.9, 66.2, 60.5]], "wc": [[51, 51, 51, 51, 3, 2, 2, 1, 1, 0, 51, 51, 51, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 2], [51, 51, 51, 51, 3, 2, 2, 1, 1, 0, 51, 51, 51, 0, 1, 1, 1, 2, 2, 2, 3, 3, 3, 2], [51, 53, 53, 53, 3, 2, 1, 1, 2, 2, 51, 51, 51, 1, 1, 1, 2, 2, 3, 3, 3, 3, 3, 2]]};
+const WXN={0:"despejado",1:"mayormente despejado",2:"parcialmente nublado",3:"nublado",45:"niebla",48:"niebla",51:"llovizna débil",53:"llovizna",55:"llovizna intensa",56:"llovizna helada",61:"lluvia débil",63:"lluvia",65:"lluvia intensa",66:"lluvia helada",71:"nieve débil",73:"nieve",75:"nieve intensa",77:"granizo fino",80:"chaparrones débiles",81:"chaparrones",82:"chaparrones fuertes",85:"chaparrones de nieve",86:"chaparrones de nieve",95:"tormenta",96:"tormenta con granizo",99:"tormenta con granizo"};
+function wxHora(k,n,h){ const a=WX[k][n], i=Math.max(0,Math.min(a.length-2,Math.floor(h))), f=Math.max(0,Math.min(1,h-i)); return a[i]+(a[i+1]-a[i])*f; }
+function wxAt(alt,min){
+  const h=5+min/60, L=WX.niveles, lo=alt>=L[1]?1:0, hi=lo+1, f=Math.max(0,Math.min(1,(alt-L[lo])/(L[hi]-L[lo])));
+  const v=k=>wxHora(k,lo,h)+(wxHora(k,hi,h)-wxHora(k,lo,h))*f, cerca=f<0.5?lo:hi;
+  return {t:v("t"),at:v("at"),pp:v("pp"),w:v("w"),g:v("g"),wc:WX.wc[cerca][Math.max(0,Math.min(23,Math.round(h)))]};
+}
+const grados = v => { const r=Math.round(v); return (r<0?"−"+(-r):r)+" °C"; };
+function renderClima(horaDe){
+  const filas=P.map((p,i)=>({i,p,min:horaDe(i),x:wxAt(p[2],horaDe(i))}));
+  let h="<tr><th>Punto</th><th>Hora</th><th>Alt. (m)</th><th>Temp.</th><th>Sensación</th><th>Viento · ráfagas</th><th>Lluvia</th><th>Cielo</th></tr>", l="";
+  filas.forEach(({i,p,min,x})=>{
+    const frio=x.at<=0?' style="color:var(--teal);font-weight:700"':"", raf=x.g>=60?' <span class="pill warn">ráfagas</span>':"";
+    const nom=({0:"Centro Cívico · largada",13:"Centro Cívico · llegada"})[i]||p[0], hh=hhmm(min).slice(4);
+    h+=`<tr class="${p[9]==="paso"||p[9]==="pc"?"paso":""}"><td>${nom}</td><td class="tab"><b>${hh}</b></td><td class="tab">${p[2]}</td><td class="tab">${grados(x.t)}</td><td class="tab"${frio}>${grados(x.at)}</td><td class="tab">${Math.round(x.w)} · ${Math.round(x.g)} km/h${raf}</td><td class="tab">${Math.round(x.pp)} %</td><td>${WXN[x.wc]||"—"}</td></tr>`;
+    l+=`<li class="${p[9]==="paso"||p[9]==="pc"?"paso":""}"><div class="h">${hh}</div><div><div class="n">${nom} <span class="m">· ${p[2]} m</span></div>
+      <div class="m"><b style="color:var(--ink)">${grados(x.t)}</b> · sensación <span${frio}>${grados(x.at)}</span> · ${WXN[x.wc]||""}</div>
+      <div class="m">viento ${Math.round(x.w)} km/h, ráfagas ${Math.round(x.g)}${raf} · lluvia ${Math.round(x.pp)} %</div></div></li>`;
+  });
+  document.getElementById("wx-t").innerHTML=h;
+  document.getElementById("wx-l").innerHTML=l;
+  const fr=filas.reduce((a,b)=>b.x.at<a.x.at?b:a), vi=filas.reduce((a,b)=>b.x.g>a.x.g?b:a), ll=filas.reduce((a,b)=>b.x.pp>a.x.pp?b:a);
+  const mm=WX.mm[0].slice(5,21).reduce((a,b)=>a+b,0);
+  const n=f=>({0:"la largada",13:"la llegada"})[f.i]||f.p[0];
+  document.getElementById("wx-res").innerHTML=[
+    `Amanecer ${WX.amanecer} · atardecer ${WX.atardecer}`,
+    `Sensación más baja: ${grados(fr.x.at)} en ${n(fr)}`,
+    `Ráfagas máx.: ${Math.round(vi.x.g)} km/h en ${n(vi)}`,
+    `Lluvia: hasta ${Math.round(ll.x.pp)} % de probabilidad, ${mm.toFixed(1).replace(".",",")} mm en el día`
+  ].map(t=>`<span>${t}</span>`).join("");
+  document.getElementById("wx-tag").textContent=`Open-Meteo · consultado ${WX.consulta}`;
+  document.getElementById("wx-nota").innerHTML=`Pronóstico de modelo, consultado el ${WX.consulta}. A varios días de la carrera es orientativo: se actualiza el jueves o el viernes. Los valores se interpolan entre tres alturas (795, 1400 y 1916 m).`;
+}
+/* fin clima */
+function todo(){ etapas(); fechas(); estado(); renderClima(eta); }
+const ESC=[
+  {t:856,n:"Plan",d:"El plan de carrera tal cual."},
+  {t:904,n:"Como en 2025",d:"Su tiempo real de 2025 en la versión 80K, un 9 % más lento que lo planeado."},
+  {t:960,n:"Día complicado",d:"Día con complicaciones: calor, frío, malestar o una parada larga."},
+  {t:1080,n:"Día muy difícil",d:"Día muy difícil, caminando buena parte."},
+];
+function escenarios(){
+  document.getElementById("esc").innerHTML=ESC.map(e=>{
+    const ll=hhmm(PLAN_MIN[13]*e.t/PLAN_TOTAL).slice(4);
+    return `<button type="button" data-t="${e.t}" aria-pressed="${!AJ&&e.t===TOTAL}"><span class="et">${e.n}</span><span class="el">${dur(e.t)} h · llega ${ll}</span></button>`;
+  }).join("");
+  const act=ESC.find(e=>!AJ&&e.t===TOTAL);
+  document.getElementById("esc-d").textContent = AJ ? "Escenarios desactivados: las horas salen del paso real informado abajo."
+    : (act?act.d+" ":"")+"Cada escenario reparte los tramos del plan en proporción al tiempo total. En carrera es más preciso el ajuste con un paso real.";
+  document.querySelectorAll("#esc button").forEach(b=>b.addEventListener("click",()=>{ TOTAL=+b.dataset.t; AJ=null; guardar(); escenarios(); todo(); avisoAjuste(); }));
+}
+/* ajuste con un paso real de LiveTrail */
+function minDesdeLargada(h){ const m=/^(\d{1,2}):(\d{2})/.exec(h||""); if(!m) return null; let t=(+m[1])*60+(+m[2])-300; if(t<=0) t+=1440; return t; }
+function guardar(){ try{ localStorage.setItem("seg-ritmo",String(TOTAL)); localStorage.setItem("seg-ajuste",AJ?JSON.stringify({i:AJ.i,h:AJ.h}):""); }catch(e){} }
+function avisoAjuste(err){
+  const msg=document.getElementById("aj-msg");
+  if(err){ msg.className="msg err"; msg.textContent=err; return; }
+  if(!AJ){ msg.className="msg"; msg.textContent="Elegí el último punto que muestra LiveTrail y su hora de paso: los puntos que faltan se corren con el mismo retraso o adelanto."; return; }
+  const d=Math.round(AJ.t-PLAN_MIN[AJ.i]);
+  const dif = d===0?"igual que el plan": d>0?`${dur(d)} h detrás del plan`:`${dur(-d)} h adelante del plan`;
+  msg.className="msg on"; msg.textContent=`Ajustado con ${NOMBRE(AJ.i)} a las ${AJ.h} (${dif}). Llegada proyectada: ${hm(eta(13))}, ${dur(TOTAL)} h.`;
+}
+function aplicarAjuste(i,h){
+  const t=minDesdeLargada(h);
+  if(t==null) return "Falta la hora de paso.";
+  const d=t-PLAN_MIN[i];
+  if(d<-120||d>420) return `Con esa hora iría ${d<0?"más de 2 h adelante":"más de 7 h detrás"} del plan: revisá el punto y la hora (formato 24 h).`;
+  AJ={i,h,t}; TOTAL=PLAN_TOTAL+d; return null;
+}
+(function(){
+  const sel=document.getElementById("aj-pt");
+  sel.innerHTML=P.map((p,i)=>i===0?"":`<option value="${i}">${NOMBRE(i)} · km ${fk(p[1])}</option>`).join("");
+  document.getElementById("aj-ok").addEventListener("click",()=>{
+    const err=aplicarAjuste(+sel.value,document.getElementById("aj-h").value);
+    if(err){ avisoAjuste(err); return; }
+    guardar(); escenarios(); todo(); avisoAjuste();
+  });
+  document.getElementById("aj-x").addEventListener("click",()=>{ AJ=null; TOTAL=PLAN_TOTAL; guardar(); escenarios(); todo(); avisoAjuste(); });
+})();
+try{
+  const a=localStorage.getItem("seg-ajuste");
+  if(a){ const o=JSON.parse(a); if(!aplicarAjuste(o.i,o.h)){ document.getElementById("aj-pt").value=String(o.i); document.getElementById("aj-h").value=o.h; } }
+  else { const v=+localStorage.getItem("seg-ritmo"); if(ESC.some(e=>e.t===v)) TOTAL=v; }
+}catch(e){}
+escenarios();
+function draw(){ perfilS(); marca(); }
+let rz; addEventListener("resize",()=>{ clearTimeout(rz); rz=setTimeout(draw,150); });
+draw(); todo(); avisoAjuste(); setInterval(estado,30000);
+const p2=n=>String(n).padStart(2,"0");
+function reloj(){
+  const now=Date.now(), lbl=document.getElementById("cd-lbl"), cd=document.getElementById("cd");
+  if(now<START){ const s=Math.floor((START-now)/1000); lbl.textContent="Falta para la largada"; cd.textContent=`${Math.floor(s/86400)} d ${p2(Math.floor(s%86400/3600))}:${p2(Math.floor(s%3600/60))}:${p2(s%60)}`; }
+  else if(now<END){ const s=Math.floor((now-START)/1000); lbl.textContent="Tiempo de carrera"; cd.textContent=`${Math.floor(s/3600)}:${p2(Math.floor(s%3600/60))}:${p2(s%60)}`; }
+  else { lbl.textContent="Carrera terminada"; cd.textContent="Finalizada"; }
+}
+reloj(); setInterval(reloj,1000);
+matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
+new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
+</script>
+
+</body>
+</html>
