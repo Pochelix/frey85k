@@ -367,7 +367,6 @@ footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
   <div class="wrap">
     <a href="#estado">Estado</a>
     <a href="#paso" class="esp">Horario de paso</a>
-    <a href="#pronostico">Clima</a>
     <a href="#vivo" class="esp">En vivo</a>
     <a href="#chucaro">El Chúcaro</a>
   </div>
@@ -400,18 +399,11 @@ footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
   <div class="panel chart-wrap" style="margin-top:12px"><svg id="perfil" viewBox="0 0 1000 500" preserveAspectRatio="xMinYMin meet" role="img" aria-label="Perfil de altimetría de la FREY 85K con la posición estimada"></svg>
     <p class="desliza" id="perfil-hint" hidden>Deslizá el perfil de costado para ver todo el recorrido →</p>
     <div class="legend"><span><i style="background:var(--green)"></i>Punto con público</span><span><i style="background:var(--navy);outline:1px solid var(--line)"></i>Otros puntos</span><span><i style="background:var(--teal)"></i>El Chúcaro (asistencia)</span><span><i style="background:var(--bad)"></i>Hora de corte</span><span><i style="background:var(--ink);border-radius:50%"></i>Posición estimada</span><span><i style="background:var(--green);opacity:.75"></i>Tramo recorrido</span></div>
+    <div class="mini" id="wx-res" style="margin-top:12px"></div>
+    <p class="note" style="margin-top:10px" id="wx-nota"></p>
   </div>
   <h3 style="margin:20px 0 10px">Cuatro etapas</h3>
   <div class="etapas" id="etapas"></div>
-</section>
-
-<section id="pronostico">
-  <div class="sh"><h2>Pronóstico del sábado</h2><span class="tag" id="wx-tag">Open-Meteo</span>
-    <p>Temperatura, sensación térmica, viento y lluvia en cada punto, a la hora estimada de paso (según el escenario o el ajuste elegido) y a su altura.</p></div>
-  <div class="mini" id="wx-res" style="margin-bottom:12px"></div>
-  <div class="panel tbl wx-wrap"><table id="wx-t"></table></div>
-  <ol class="tlist" id="wx-l"></ol>
-  <p class="note" style="margin-top:12px" id="wx-nota"></p>
 </section>
 
 <section id="paso">
