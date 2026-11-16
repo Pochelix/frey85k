@@ -86,7 +86,8 @@ section{padding-block:34px 8px;scroll-margin-top:56px}
 /* perfil y mapa */
 svg text{font-family:var(--display);fill:var(--muted)}
 .chart-wrap{overflow-x:auto}
-#perfil{width:100%;height:auto;display:block}
+#perfil{height:auto;display:block}
+.desliza{margin:6px 0 0;font-size:.8rem;color:var(--muted)}
 #mapa{width:100%;height:auto;display:block;max-height:520px}
 .legend{display:flex;gap:16px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:8px}
 .legend i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:middle}
@@ -561,59 +562,7 @@ function perfilS(){
     if(p[2]>1300) txt(s,{x:cx,y:cy-9,"text-anchor":"middle","font-size":11,"font-weight":600,fill:ink},p[0].replace("PC ",""));
   });
 
-  // ---- franja ----
-  const BANDA=[0,3,4,6,8,10,11,13];
-  const NB={0:"Largada",3:"Julio Felley",4:"Chitaka",6:"Baqueanos",8:"El Chúcaro",10:"Cazadores",11:"Trypay",13:"Llegada"};
-  const total=eta(13), hhm=m=>{ m=Math.round(m); return Math.floor(m/60)+"h"+String(m%60).padStart(2,"0"); };
-  const xT=t=>{ if(t<=0) return x(0); for(let i=0;i<P.length-1;i++){ if(t<=eta(i+1)){ const f=(t-eta(i))/(eta(i+1)-eta(i)); return x(P[i][8]+(P[i+1][8]-P[i][8])*f); } } return x(xmax); };
-  // líneas verticales de cada puesto
-  BANDA.forEach(i=>el("line",{x1:x(P[i][8]),x2:x(P[i][8]),y1:PB,y2:PB+194,stroke:css("--line"),"stroke-width":1,"stroke-dasharray":"2 3"},s));
-  el("line",{x1:L,x2:W-R,y1:PB,y2:PB,stroke:css("--line"),"stroke-width":1},s);
-  // fila 1: km y nombre
-  BANDA.forEach((i,k)=>{
-    const cx=x(P[i][8]), anc=k===0?"start":k===BANDA.length-1?"end":"middle", dx=k===0?-4:k===BANDA.length-1?4:0;
-    txt(s,{x:cx+dx,y:PB+16,"text-anchor":anc,"font-size":12,"font-weight":700,fill:css("--green-ink")},fk(P[i][1])+" km");
-    txt(s,{x:cx+dx,y:PB+31,"text-anchor":anc,"font-size":12,"font-weight":600,fill:ink},NB[i]);
-  });
-  // fila 2: tramo (km y D+) y fila 5: tiempo y % del total
-  const caja=(cx,y0,w,l1,l2)=>{ el("rect",{x:cx-w/2,y:y0,width:w,height:32,rx:4,fill:css("--bg"),stroke:css("--line")},s);
-    txt(s,{x:cx,y:y0+13,"text-anchor":"middle","font-size":11.5,"font-weight":700,fill:ink},l1);
-    txt(s,{x:cx,y:y0+26,"text-anchor":"middle","font-size":11,fill:mut},l2); };
-  for(let k=0;k<BANDA.length-1;k++){
-    const a=BANDA[k], b=BANDA[k+1], xa=x(P[a][8]), xb=x(P[b][8]), cx=(xa+xb)/2, w=Math.min(96,xb-xa-8);
-    caja(cx,PB+40,w,fk(Math.round((P[b][1]-P[a][1])*10)/10)+" km",(P[b][3]-P[a][3])+" m D+");
-    const d=eta(b)-eta(a); caja(cx,PB+160,w,hhm(d),Math.round(d/total*100)+" %");
-  }
-  // fila 3: luz del día
-  const mins=h=>{ const [a,b]=h.split(":").map(Number); return a*60+b; };
-  const SR=mins(WX.amanecer), SS=mins(WX.atardecer);
-  const hex=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)), mix=(c1,c2,f)=>{ f=Math.max(0,Math.min(1,f)); const a=hex(c1),b=hex(c2); return "#"+a.map((v,i)=>Math.round(v+(b[i]-v)*f).toString(16).padStart(2,"0")).join(""); };
-  const cielo=m=>m<SR-25?"#102a4c":m<SR+25?mix("#102a4c","#fde9a9",(m-SR+25)/50):m<660?mix("#fde9a9","#fcd34d",(m-SR-25)/(660-SR-25)):m<960?"#fbbf24":m<SS-30?mix("#fbbf24","#fcd77a",(m-960)/(SS-30-960)):mix("#fcd77a","#102a4c",(m-SS+30)/60);
-  const gid="cielo"+Math.random().toString(36).slice(2,7), gr=el("linearGradient",{id:gid,gradientUnits:"userSpaceOnUse",x1:L,x2:W-R,y1:0,y2:0},el("defs",{},s));
-  for(let t=0;t<=total;t+=10){ el("stop",{offset:((xT(t)-L)/(W-L-R)).toFixed(4),"stop-color":cielo(300+t)},gr); }
-  el("rect",{x:L,y:PB+92,width:xT(total)-L,height:12,rx:6,fill:`url(#${gid})`},s);
-  if(SR-300>0 && SR-300<total){ const sx=xT(SR-300); wxIcono(s,sx-16,PB+84,0,.6); txt(s,{x:sx-6,y:PB+88,"font-size":11,"font-weight":600,fill:mut},WX.amanecer); }
-  if(SS-300>0 && SS-300<total){ const sx=xT(SS-300); txt(s,{x:sx,y:PB+88,"text-anchor":"middle","font-size":11,"font-weight":600,fill:mut},"☾ "+WX.atardecer); }
-  // fila 4: clima en cada puesto, a la hora estimada
-  BANDA.forEach((i,k)=>{
-    const t=eta(i), w=wxAt(P[i][2],t), cx=x(P[i][8]), anc=k===0?"start":k===BANDA.length-1?"end":"middle", dx=k===0?0:k===BANDA.length-1?0:0;
-    const ix=k===0?cx+10:k===BANDA.length-1?cx-44:cx-16;
-    wxIcono(s,ix,PB+124,w.wc,1);
-    txt(s,{x:ix+14,y:PB+129,"font-size":12.5,"font-weight":700,fill:ink},Math.round(w.t)+"°");
-    txt(s,{x:k===0?cx+2:k===BANDA.length-1?cx-2:cx,y:PB+147,"text-anchor":anc,"font-size":11.5,"font-weight":700,fill:ink},hm(t));
-  });
-}
-/* íconos de clima simples, dibujados en SVG (sin emojis) */
-function wxIcono(par,cx,cy,code,esc){
-  const g=el("g",{transform:`translate(${cx},${cy}) scale(${esc})`},par), ink=css("--ink");
-  const sol=(dx,dy,r)=>{ el("circle",{cx:dx,cy:dy,r,fill:"#f5b301"},g); for(let a=0;a<8;a++){ const an=a*Math.PI/4; el("line",{x1:dx+Math.cos(an)*(r+2),y1:dy+Math.sin(an)*(r+2),x2:dx+Math.cos(an)*(r+4.5),y2:dy+Math.sin(an)*(r+4.5),stroke:"#f5b301","stroke-width":1.6,"stroke-linecap":"round"},g); } };
-  const nube=(dx,dy)=>el("path",{d:`M${dx-8},${dy+5} a4.5,4.5 0 0 1 1,-8.8 a6,6 0 0 1 11.4,-1.4 a4.6,4.6 0 0 1 3.6,10.2 z`,fill:css("--surface"),stroke:ink,"stroke-width":1.4,"stroke-linejoin":"round"},g);
-  const c=code|0;
-  if(c<=1){ sol(0,0,5); return; }
-  if(c===2){ sol(-4,-4,4); nube(2,2); return; }
-  nube(0,0);
-  if((c>=51&&c<=67)||(c>=80&&c<=82)||c>=95){ [-5,0,5].forEach(d=>el("line",{x1:d,y1:8,x2:d-2,y2:13,stroke:"#3b82f6","stroke-width":1.6,"stroke-linecap":"round"},g)); }
-  else if((c>=71&&c<=77)||c===85||c===86){ [-5,0,5].forEach(d=>el("circle",{cx:d,cy:10,r:1.4,fill:"#7aa7d8"},g)); }
+  franja(s,x,PB,L,W,R,eta);
 }
 function marca(){
   const s=document.getElementById("perfil");
@@ -702,19 +651,80 @@ function renderClima(horaDe){
       <div class="m"><b style="color:var(--ink)">${grados(x.t)}</b> · sensación <span${frio}>${grados(x.at)}</span> · ${WXN[x.wc]||""}</div>
       <div class="m">viento ${Math.round(x.w)} km/h, ráfagas ${Math.round(x.g)}${raf} · lluvia ${Math.round(x.pp)} %</div></div></li>`;
   });
-  document.getElementById("wx-t").innerHTML=h;
-  document.getElementById("wx-l").innerHTML=l;
+  const $=id=>document.getElementById(id)||{};
+  $("wx-t").innerHTML=h;
+  $("wx-l").innerHTML=l;
   const fr=filas.reduce((a,b)=>b.x.at<a.x.at?b:a), vi=filas.reduce((a,b)=>b.x.g>a.x.g?b:a), ll=filas.reduce((a,b)=>b.x.pp>a.x.pp?b:a);
   const mm=WX.mm[0].slice(5,21).reduce((a,b)=>a+b,0);
   const n=f=>({0:"la largada",13:"la llegada"})[f.i]||f.p[0];
-  document.getElementById("wx-res").innerHTML=[
+  $("wx-res").innerHTML=[
     `Amanecer ${WX.amanecer} · atardecer ${WX.atardecer}`,
     `Sensación más baja: ${grados(fr.x.at)} en ${n(fr)}`,
     `Ráfagas máx.: ${Math.round(vi.x.g)} km/h en ${n(vi)}`,
     `Lluvia: hasta ${Math.round(ll.x.pp)} % de probabilidad, ${mm.toFixed(1).replace(".",",")} mm en el día`
   ].map(t=>`<span>${t}</span>`).join("");
-  document.getElementById("wx-tag").textContent=`Open-Meteo · consultado ${WX.consulta}`;
-  document.getElementById("wx-nota").innerHTML=`Pronóstico de modelo, consultado el ${WX.consulta}. A varios días de la carrera es orientativo: se actualiza el jueves o el viernes. Los valores se interpolan entre tres alturas (795, 1400 y 1916 m).`;
+  $("wx-tag").textContent=`Open-Meteo · consultado ${WX.consulta}`;
+  $("wx-nota").innerHTML=`Pronóstico de modelo, consultado el ${WX.consulta}. A varios días de la carrera es orientativo: se actualiza el jueves o el viernes. Los valores se interpolan entre tres alturas (795, 1400 y 1916 m).`;
+}
+/* franja bajo el perfil (estilo LiveTrail): km y nombre de cada puesto, tramos, luz del día,
+   clima a la hora estimada y tiempo de cada tramo. horaDe(i) = minutos desde la largada */
+function franja(s,x,PB,L,W,R,eta){
+  const ink=css("--ink"), mut=css("--muted"), xmax=RUTA.total;
+  const txt=(par,a,c)=>{ const t=el("text",a,par); t.textContent=c; return t; };
+  const fk=v=>String(v).replace(".",","), hm=m=>hhmm(m).slice(4);
+  // ---- franja ----
+  const BANDA=[0,3,4,6,8,10,11,13];
+  const NB={0:"Largada",3:"Julio Felley",4:"Chitaka",6:"Baqueanos",8:"El Chúcaro",10:"Cazadores",11:"Trypay",13:"Llegada"};
+  const total=eta(13), hhm=m=>{ m=Math.round(m); return Math.floor(m/60)+"h"+String(m%60).padStart(2,"0"); };
+  const xT=t=>{ if(t<=0) return x(0); for(let i=0;i<P.length-1;i++){ if(t<=eta(i+1)){ const f=(t-eta(i))/(eta(i+1)-eta(i)); return x(P[i][8]+(P[i+1][8]-P[i][8])*f); } } return x(xmax); };
+  // líneas verticales de cada puesto
+  BANDA.forEach(i=>el("line",{x1:x(P[i][8]),x2:x(P[i][8]),y1:PB,y2:PB+194,stroke:css("--line"),"stroke-width":1,"stroke-dasharray":"2 3"},s));
+  el("line",{x1:L,x2:W-R,y1:PB,y2:PB,stroke:css("--line"),"stroke-width":1},s);
+  // fila 1: km y nombre
+  BANDA.forEach((i,k)=>{
+    const cx=x(P[i][8]), anc=k===0?"start":k===BANDA.length-1?"end":"middle", dx=k===0?-4:k===BANDA.length-1?4:0;
+    txt(s,{x:cx+dx,y:PB+16,"text-anchor":anc,"font-size":12,"font-weight":700,fill:css("--green-ink")},fk(P[i][1])+" km");
+    txt(s,{x:cx+dx,y:PB+31,"text-anchor":anc,"font-size":12,"font-weight":600,fill:ink},NB[i]);
+  });
+  // fila 2: tramo (km y D+) y fila 5: tiempo y % del total
+  const caja=(cx,y0,w,l1,l2)=>{ el("rect",{x:cx-w/2,y:y0,width:w,height:32,rx:4,fill:css("--bg"),stroke:css("--line")},s);
+    txt(s,{x:cx,y:y0+13,"text-anchor":"middle","font-size":11.5,"font-weight":700,fill:ink},l1);
+    txt(s,{x:cx,y:y0+26,"text-anchor":"middle","font-size":11,fill:mut},l2); };
+  for(let k=0;k<BANDA.length-1;k++){
+    const a=BANDA[k], b=BANDA[k+1], xa=x(P[a][8]), xb=x(P[b][8]), cx=(xa+xb)/2, w=Math.min(96,xb-xa-8);
+    caja(cx,PB+40,w,fk(Math.round((P[b][1]-P[a][1])*10)/10)+" km",(P[b][3]-P[a][3])+" m D+");
+    const d=eta(b)-eta(a); caja(cx,PB+160,w,hhm(d),Math.round(d/total*100)+" %");
+  }
+  // fila 3: luz del día
+  const mins=h=>{ const [a,b]=h.split(":").map(Number); return a*60+b; };
+  const SR=mins(WX.amanecer), SS=mins(WX.atardecer);
+  const hex=c=>[1,3,5].map(i=>parseInt(c.slice(i,i+2),16)), mix=(c1,c2,f)=>{ f=Math.max(0,Math.min(1,f)); const a=hex(c1),b=hex(c2); return "#"+a.map((v,i)=>Math.round(v+(b[i]-v)*f).toString(16).padStart(2,"0")).join(""); };
+  const cielo=m=>m<SR-25?"#102a4c":m<SR+25?mix("#102a4c","#fde9a9",(m-SR+25)/50):m<660?mix("#fde9a9","#fcd34d",(m-SR-25)/(660-SR-25)):m<960?"#fbbf24":m<SS-30?mix("#fbbf24","#fcd77a",(m-960)/(SS-30-960)):mix("#fcd77a","#102a4c",(m-SS+30)/60);
+  const gid="cielo"+Math.random().toString(36).slice(2,7), gr=el("linearGradient",{id:gid,gradientUnits:"userSpaceOnUse",x1:L,x2:W-R,y1:0,y2:0},el("defs",{},s));
+  for(let t=0;t<=total;t+=10){ el("stop",{offset:((xT(t)-L)/(W-L-R)).toFixed(4),"stop-color":cielo(300+t)},gr); }
+  el("rect",{x:L,y:PB+92,width:xT(total)-L,height:12,rx:6,fill:`url(#${gid})`},s);
+  if(SR-300>0 && SR-300<total){ const sx=xT(SR-300); wxIcono(s,sx-16,PB+84,0,.6); txt(s,{x:sx-6,y:PB+88,"font-size":11,"font-weight":600,fill:mut},WX.amanecer); }
+  if(SS-300>0 && SS-300<total){ const sx=xT(SS-300); txt(s,{x:sx,y:PB+88,"text-anchor":"middle","font-size":11,"font-weight":600,fill:mut},"☾ "+WX.atardecer); }
+  // fila 4: clima en cada puesto, a la hora estimada
+  BANDA.forEach((i,k)=>{
+    const t=eta(i), w=wxAt(P[i][2],t), cx=x(P[i][8]), anc=k===0?"start":k===BANDA.length-1?"end":"middle", dx=k===0?0:k===BANDA.length-1?0:0;
+    const ix=k===0?cx+10:k===BANDA.length-1?cx-44:cx-16;
+    wxIcono(s,ix,PB+124,w.wc,1);
+    txt(s,{x:ix+14,y:PB+129,"font-size":12.5,"font-weight":700,fill:ink},Math.round(w.t)+"°");
+    txt(s,{x:k===0?cx+2:k===BANDA.length-1?cx-2:cx,y:PB+147,"text-anchor":anc,"font-size":11.5,"font-weight":700,fill:ink},hm(t));
+  });
+}
+/* íconos de clima simples, dibujados en SVG (sin emojis) */
+function wxIcono(par,cx,cy,code,esc){
+  const g=el("g",{transform:`translate(${cx},${cy}) scale(${esc})`},par), ink=css("--ink");
+  const sol=(dx,dy,r)=>{ el("circle",{cx:dx,cy:dy,r,fill:"#f5b301"},g); for(let a=0;a<8;a++){ const an=a*Math.PI/4; el("line",{x1:dx+Math.cos(an)*(r+2),y1:dy+Math.sin(an)*(r+2),x2:dx+Math.cos(an)*(r+4.5),y2:dy+Math.sin(an)*(r+4.5),stroke:"#f5b301","stroke-width":1.6,"stroke-linecap":"round"},g); } };
+  const nube=(dx,dy)=>el("path",{d:`M${dx-8},${dy+5} a4.5,4.5 0 0 1 1,-8.8 a6,6 0 0 1 11.4,-1.4 a4.6,4.6 0 0 1 3.6,10.2 z`,fill:css("--surface"),stroke:ink,"stroke-width":1.4,"stroke-linejoin":"round"},g);
+  const c=code|0;
+  if(c<=1){ sol(0,0,5); return; }
+  if(c===2){ sol(-4,-4,4); nube(2,2); return; }
+  nube(0,0);
+  if((c>=51&&c<=67)||(c>=80&&c<=82)||c>=95){ [-5,0,5].forEach(d=>el("line",{x1:d,y1:8,x2:d-2,y2:13,stroke:"#3b82f6","stroke-width":1.6,"stroke-linecap":"round"},g)); }
+  else if((c>=71&&c<=77)||c===85||c===86){ [-5,0,5].forEach(d=>el("circle",{cx:d,cy:10,r:1.4,fill:"#7aa7d8"},g)); }
 }
 /* fin clima */
 function todo(){ etapas(); fechas(); perfilS(); estado(); renderClima(eta); }
@@ -769,7 +779,10 @@ try{
 }catch(e){}
 escenarios();
 function draw(){ perfilS(); marca(); }
-let rz; addEventListener("resize",()=>{ clearTimeout(rz); rz=setTimeout(draw,150); });
+let rz, anchoP=0; const redib=()=>{ clearTimeout(rz); rz=setTimeout(draw,150); };
+/* redibuja si cambia el ancho del panel del perfil (también si la página cargó con el panel angosto u oculto) */
+if(window.ResizeObserver) new ResizeObserver(e=>{ const w=Math.round(e[0].contentRect.width); if(w&&w!==anchoP){ anchoP=w; redib(); } }).observe(document.getElementById("perfil").parentNode);
+else addEventListener("resize",redib);
 draw(); todo(); avisoAjuste(); setInterval(estado,30000);
 const p2=n=>String(n).padStart(2,"0");
 function reloj(){
