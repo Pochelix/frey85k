@@ -340,6 +340,43 @@ footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
 @media (max-width:860px){ .live{grid-template-columns:1fr} .now{grid-template-columns:1fr} .etapas{grid-template-columns:1fr 1fr} .etapas>div:nth-child(2){border-right:0} .etapas>div:nth-child(-n+2){border-bottom:1px solid var(--line)} }
 @media (max-width:560px){ .etapas{grid-template-columns:1fr} .etapas>div{border-right:0;border-bottom:1px solid var(--line)} }
 </style>
+<style>
+/* la previa: la arma arma-tableros.py desde previa.plantilla.html */
+/* previa */
+/* tres días en columnas que caen a una en el celu, madrugada como horario. Esto también va al tablero propio */
+.dias{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.dia{background:var(--surface);border:1px solid var(--line);display:flex;flex-direction:column;min-width:0}
+.dia>header{background:var(--navy);color:#fff;padding:10px 14px;display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.dia>header h3{margin:0;font-size:1.05rem;color:#fff}
+.dia>header .falta{font-family:var(--display);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--green)}
+.dia.hoy{border:2px solid var(--green)}
+.dia.hoy>header{background:var(--green)}
+.dia.hoy>header h3,.dia.hoy>header .falta{color:var(--navy)}
+.dia.paso{opacity:.6}
+.dia dl{margin:0;padding:4px 14px 12px}
+.dia dt{font-family:var(--display);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-top:12px}
+.dia dd{margin:2px 0 0;font-size:.9rem}
+.dia dd ul{margin:2px 0 0;padding-left:18px}
+.dia dd li{margin:2px 0}
+.dia .clave{font-weight:600}
+.plato{display:grid;grid-template-columns:2fr 1fr;height:44px;border:1px solid var(--line);margin:4px 0 12px}
+.plato div{display:flex;align-items:center;justify-content:center;font-family:var(--display);font-weight:700;font-size:.85rem;padding:0 6px;text-align:center}
+.plato .hc{background:var(--green);color:var(--navy)}
+.plato .pr{background:var(--navy);color:#fff}
+.madr{list-style:none;margin:0;padding:0;background:var(--surface);border:1px solid var(--line)}
+.madr li{display:grid;grid-template-columns:76px 1fr;gap:14px;padding:12px 16px;border-bottom:1px solid var(--line)}
+.madr li:last-child{border-bottom:0}
+.madr li>div{min-width:0}
+.madr .t{font-family:var(--display);font-size:1.35rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
+.madr .t small{display:block;font-size:.7rem;font-weight:600;color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.madr .q{font-family:var(--display);font-weight:700}
+.madr p{margin:2px 0 0;font-size:.9rem}
+.madr li.key{background:var(--soft)}
+.madr li.key .t,.madr li.key .q{color:var(--green-ink)}
+@media (max-width:860px){ .dias{grid-template-columns:1fr} }
+@media (max-width:560px){ .madr li{grid-template-columns:62px 1fr;gap:10px;padding:10px 12px} .madr .t{font-size:1.15rem} }
+/* fin previa */
+</style>
 
 <header class="band">
   <div class="wrap">
@@ -370,6 +407,7 @@ footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
     <a href="#paso" class="esp">Horario de paso</a>
     <a href="#vivo" class="esp">En vivo</a>
     <a href="#chucaro">El Chúcaro</a>
+    <a href="#dias">La previa</a>
   </div>
 </nav>
 
@@ -439,6 +477,97 @@ footer{color:var(--muted);font-size:.8rem;padding-block:30px 40px}
       <a class="btn" href="https://maps.app.goo.gl/5XjkG8amFYgqVZv87" target="_blank" rel="noopener">Ubicación ↗</a></div>
   </div>
 </section>
+
+<!-- previa -->
+<section id="dias">
+  <div class="sh"><h2>La previa, día por día</h2><span class="tag">Puesta a punto</span>
+    <p>El trabajo ya está hecho. Estos días son para no gastar: activar las piernas, dejar todo listo, cargar hidratos y dormir. El martes 17 ya hice 45 min de trote.</p></div>
+  <div class="dias">
+    <article class="dia" data-dia="2026-11-18">
+      <header><h3>Miércoles 18</h3><span class="falta">faltan 3 días</span></header>
+      <dl>
+        <dt>Entrenar</dt>
+        <dd><span class="clave">Descanso.</span></dd>
+        <dt>Comer</dt>
+        <dd>Normal, con hidratos en cada comida. Botella de agua siempre a mano.</dd>
+        <dt>Hacer</dt>
+        <dd><ul><li><b>Organizar todo el material:</b> chaleco, ropa, frontales y pilas, y la bolsa de El Chúcaro.</li><li>Reunión con el Saga Training Lab.</li></ul></dd>
+        <dt>Dormir</dt>
+        <dd>Lo de siempre, 8 h.</dd>
+      </dl>
+    </article>
+    <article class="dia" data-dia="2026-11-19">
+      <header><h3>Jueves 19</h3><span class="falta">faltan 2 días</span></header>
+      <dl>
+        <dt>Entrenar</dt>
+        <dd><span class="clave">Activaciones: 8 × 150 m.</span> Sueltas, sin apretar: terminar con ganas de más.</dd>
+        <dt>Comer</dt>
+        <dd>Normal, con hidratos en cada comida.</dd>
+        <dt>Hacer</dt>
+        <dd><ul><li><b>Sociales a la tarde</b> =)</li><li>Mirar el pronóstico y decidir el kit de frío.</li></ul></dd>
+        <dt>Dormir</dt>
+        <dd><span class="clave">La noche que más cuenta.</span> El viernes se duerme poco por los nervios y el despertador.</dd>
+      </dl>
+    </article>
+    <article class="dia" data-dia="2026-11-20">
+      <header><h3>Viernes 20</h3><span class="falta">falta 1 día</span></header>
+      <dl>
+        <dt>Entrenar</dt>
+        <dd><span class="clave">Descanso.</span></dd>
+        <dt>Comer</dt>
+        <dd><b>A comer hidratos todo el día</b> (ver Comida). Cena temprano, conocida y simple. Nada nuevo.</dd>
+        <dt>Hacer</dt>
+        <dd><ul><li><b>Acreditación a las 16:30:</b> retirar el dorsal en Puerto San Carlos, con DNI.</li><li><b>Dejar todo preparado:</b> chaleco cargado, ropa armada, dorsal prendido, celular, reloj y frontales cargados.</li><li>Darle la bolsa de El Chúcaro al asistente.</li><li>Dos alarmas a las 03:00.</li></ul></dd>
+        <dt>Dormir</dt>
+        <dd><span class="clave">A dormir a las 21 h.</span> Aunque no duermas, descansás igual.</dd>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="comida">
+  <div class="sh"><h2>Hidratos del viernes</h2><span class="tag">En porciones</span>
+    <p>No se trata de comer el doble: los hidratos le ganan lugar al resto del plato.</p></div>
+  <div class="grid2">
+    <div class="panel">
+      <h3>Cómo se arma cada plato</h3>
+      <div class="plato" role="img" aria-label="Dos tercios del plato hidratos, un tercio proteína"><div class="hc">⅔ hidratos</div><div class="pr">⅓ proteína</div></div>
+      <ul class="rules">
+        <li><b>Hidratos:</b> pasta, arroz blanco, papa, polenta, ñoquis o pan.</li>
+        <li><b>Proteína magra:</b> pollo, pescado o huevo, en porción chica.</li>
+        <li><b>Verdura:</b> poca y cocida.</li>
+        <li><b>Entre comidas:</b> pan con miel o membrillo, banana, galletitas de arroz o un jugo.</li>
+      </ul>
+    </div>
+    <div class="panel">
+      <h3>Además</h3>
+      <ul class="rules">
+        <li>Pan y arroz blancos, fruta sin cáscara: <b>poca fibra</b>.</li>
+        <li>Poca grasa, nada frito ni picante.</li>
+        <li><b>Nada que no hayas probado antes.</b></li>
+        <li>Sin alcohol.</li>
+        <li>Agua todo el día y una bolsita de iso a la tarde. Orina clara.</li>
+      </ul>
+      <p class="note" style="margin-top:14px">Si el sábado te sentís algo pesado o con un kilo de más, es normal: el músculo guarda agua junto con los hidratos.</p>
+    </div>
+  </div>
+</section>
+
+<section id="madrugada">
+  <div class="sh"><h2>Madrugada del sábado</h2><span class="tag">De la cama a la largada</span>
+    <p>Con todo preparado del viernes, a la mañana sólo hay que desayunar, vestirse y salir.</p></div>
+  <ol class="madr">
+    <li><div class="t">21:00<small>vie</small></div><div><div class="q">A dormir</div><p>Todo armado al lado de la puerta: chaleco cargado, ropa, dorsal prendido y la bolsa para el guardarropa.</p></div></li>
+    <li><div class="t">03:00</div><div><div class="q">Despertador y desayuno</div><p>Dos alarmas. Desayuno normal, el de siempre, y medio litro de líquido.</p></div></li>
+    <li><div class="t">03:30</div><div><div class="q">Vestirse y revisar</div><p>Vaselina en pies y zonas de roce, dorsal adelante, protector en cara y cuello (amanece 06:12). Chaleco: 9 geles, 15 sales, 3 cafeínas, 3 bolsitas de iso, botiquín, softs llenas. Frontal probada, luz roja, celular con LiveTrail y sin modo avión.</p></div></li>
+    <li class="key"><div class="t">04:00</div><div><div class="q">Salir para la largada</div><p>Centro Cívico. En la bolsa del guardarropa, ropa seca y abrigo para la llegada.</p></div></li>
+    <li><div class="t">04:15</div><div><div class="q">Guardarropa y baño</div><p>El guardarropa abre a las 04:00. Ir al baño enseguida, antes de que se armen las colas.</p></div></li>
+    <li><div class="t">04:25</div><div><div class="q">Entrada en calor</div><p>Trote suave y movilidad, sin gastar. Unos sorbos de agua.</p></div></li>
+    <li><div class="t">04:40</div><div><div class="q">Al corral, temprano</div><p>No entrar tarde, para no largar muy atrás y quedar atascado en la subida al Otto. Frontal prendida y guantes a mano.</p></div></li>
+    <li class="key"><div class="t">05:00</div><div><div class="q">Largada</div><p>Más lento de lo que te pide el cuerpo. Lo primero es el Otto: 8 km y 669 m+ de noche.</p></div></li>
+  </ol>
+</section>
+<!-- fin previa -->
 
 <footer>Horas estimadas: plan de carrera de Diego (objetivo 14:16). Puntos, desnivel, horas de corte y reglas: Guía del Corredor Patagonia Bariloche by UTMB 2026. Perfil: track oficial 2026. Las ubicaciones son las de la guía.</footer>
 </main>
@@ -809,6 +938,26 @@ function reloj(){
   else if(now<END){ const s=Math.floor((now-START)/1000); lbl.textContent="Tiempo de carrera"; cd.textContent=`${Math.floor(s/3600)}:${p2(Math.floor(s%3600/60))}:${p2(s%60)}`; }
   else { lbl.textContent="Carrera terminada"; cd.textContent="Finalizada"; }
 }
+/* hoy */
+// El día de hoy en hora de Bariloche: marca la tarjeta. También va al tablero propio (allá no hay #f-hoy).
+const hoyAR = () => new Intl.DateTimeFormat("en-CA",{timeZone:"America/Argentina/Buenos_Aires"}).format(new Date());
+function marcarHoy(){
+  const hoy = hoyAR();
+  document.querySelectorAll(".dia").forEach(d=>{
+    d.classList.toggle("hoy", d.dataset.dia===hoy);
+    d.classList.toggle("paso", d.dataset.dia<hoy);
+    if(d.dataset.dia===hoy) d.querySelector(".falta").textContent="hoy";
+  });
+  const f = document.getElementById("f-hoy");
+  if(!f) return;
+  const etiquetas = {"2026-11-18":["mié 18","faltan 3 días"],"2026-11-19":["jue 19","faltan 2 días"],"2026-11-20":["vie 20","mañana se corre"],"2026-11-21":["sáb 21","día de carrera"]};
+  const e = etiquetas[hoy];
+  f.innerHTML = e ? `${e[0]} <small>${e[1]}</small>` : (hoy<"2026-11-18" ? "antes <small>de la previa</small>" : "después <small>de la carrera</small>");
+}
+marcarHoy();
+let ultimoDia=hoyAR(); setInterval(()=>{ if(hoyAR()!==ultimoDia){ ultimoDia=hoyAR(); marcarHoy(); } },60000);
+/* fin hoy */
+
 reloj(); setInterval(reloj,1000);
 matchMedia("(prefers-color-scheme: dark)").addEventListener("change",draw);
 new MutationObserver(draw).observe(document.documentElement,{attributes:true,attributeFilter:["data-theme"]});
