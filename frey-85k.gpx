@@ -7,6 +7,84 @@
     </link>
     <time>2026-09-16T13:18:46Z</time>
   </metadata>
+  <wpt lat="-41.133643" lon="-71.3100459">
+    <ele>795</ele>
+    <name>Centro Cívico · largada y llegada</name>
+    <desc>Avituallamiento · km 0 y 88,2 · 795 m</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.1471073" lon="-71.379932">
+    <ele>1417</ele>
+    <name>Cerro Otto (ida)</name>
+    <desc>Paso · km 8 · 1417 m</desc>
+    <type>Paso</type>
+  </wpt>
+  <wpt lat="-41.1364069" lon="-71.4107849">
+    <ele>812</ele>
+    <name>Tronador</name>
+    <desc>Avituallamiento · km 12,1 · 812 m</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.178217" lon="-71.4143364">
+    <ele>824</ele>
+    <name>Julio Felley</name>
+    <desc>Avituallamiento · km 17,4 · 824 m</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.245027" lon="-71.4543664">
+    <ele>822</ele>
+    <name>Chitaka</name>
+    <desc>Avituallamiento · km 28,7 · 822 m · corte sáb 10:40</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.2619849" lon="-71.4185109">
+    <ele>1932</ele>
+    <name>PC Pontoneros</name>
+    <desc>Control · km 36,2 · 1932 m</desc>
+    <type>Control</type>
+  </wpt>
+  <wpt lat="-41.2427293" lon="-71.4580287">
+    <ele>815</ele>
+    <name>Los Baqueanos</name>
+    <desc>Avituallamiento · km 42,3 · 815 m · corte sáb 14:30</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.210433" lon="-71.4367713">
+    <ele>965</ele>
+    <name>Picada Frey</name>
+    <desc>Paso · km 48,9 · 965 m</desc>
+    <type>Paso</type>
+  </wpt>
+  <wpt lat="-41.1689102" lon="-71.4423971">
+    <ele>1054</ele>
+    <name>El Chúcaro</name>
+    <desc>Asistencia · km 56,1 · 1054 m · corte sáb 18:00</desc>
+    <type>Asistencia</type>
+  </wpt>
+  <wpt lat="-41.1634251" lon="-71.4808753">
+    <ele>1916</ele>
+    <name>PC Lynch</name>
+    <desc>Control · km 61,5 · 1916 m</desc>
+    <type>Control</type>
+  </wpt>
+  <wpt lat="-41.1685249" lon="-71.4403725">
+    <ele>1060</ele>
+    <name>Refugio Cazadores</name>
+    <desc>Avituallamiento · km 66,2 · 1060 m · corte sáb 22:00</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.1385092" lon="-71.4101288">
+    <ele>813</ele>
+    <name>Trypay Antú</name>
+    <desc>Avituallamiento · km 75,6 · 813 m · corte sáb 23:30</desc>
+    <type>Avituallamiento</type>
+  </wpt>
+  <wpt lat="-41.1472432" lon="-71.3841685">
+    <ele>1414</ele>
+    <name>Cerro Otto (vuelta)</name>
+    <desc>Paso · km 79,8 · 1414 m</desc>
+    <type>Paso</type>
+  </wpt>
   <trk>
     <name>80k Bariloche by UTMB on AllTrails</name>
     <trkseg>

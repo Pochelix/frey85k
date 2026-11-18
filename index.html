@@ -625,7 +625,30 @@ function estado(){
 }
 
 /* clima */
-const WX = {"consulta": "18/11 08:53", "niveles": [795, 1400, 1916], "amanecer": "06:12", "atardecer": "20:50", "t": [[10.0, 9.8, 9.4, 9.1, 9.1, 9.0, 9.1, 9.1, 9.2, 9.9, 11.3, 12.0, 12.5, 12.8, 13.5, 13.7, 13.7, 13.4, 12.9, 11.8, 10.5, 9.3, 8.6, 8.0], [6.1, 5.8, 5.5, 5.2, 5.1, 5.1, 5.1, 5.1, 5.3, 5.9, 7.4, 8.1, 8.6, 8.9, 9.5, 9.8, 9.7, 9.5, 8.9, 7.9, 6.5, 5.4, 4.6, 4.1], [1.4, 1.5, 0.9, 0.6, 0.7, 0.8, 1.0, 1.0, 1.2, 1.4, 2.5, 3.3, 3.4, 3.6, 5.0, 5.4, 5.3, 4.7, 3.9, 2.7, 1.4, 0.2, -0.6, -1.2]], "at": [[7.7, 7.6, 7.3, 7.2, 7.3, 7.3, 7.1, 7.0, 7.1, 7.7, 8.8, 8.9, 9.5, 10.2, 11.8, 10.8, 11.0, 10.2, 8.8, 7.6, 6.4, 5.3, 4.7, 4.3], [2.9, 2.8, 2.5, 2.4, 2.5, 2.5, 2.3, 2.2, 2.3, 2.9, 4.1, 4.2, 4.8, 5.6, 7.2, 6.3, 6.4, 5.6, 4.2, 3.0, 1.8, 0.8, 0.1, -0.3], [-0.7, -0.7, -1.2, -1.5, -1.4, -1.4, -1.2, -1.3, -1.8, -1.7, -0.8, -0.2, -0.4, -0.2, 2.5, 1.9, 1.9, 0.7, -1.0, -2.1, -3.2, -4.1, -4.8, -5.3]], "pp": [[4, 3, 5, 8, 12, 17, 22, 25, 28, 33, 41, 50, 57, 58, 57, 55, 55, 55, 51, 39, 22, 10, 5, 4], [8, 8, 10, 12, 14, 16, 20, 26, 34, 39, 41, 40, 41, 46, 51, 53, 47, 37, 27, 18, 10, 4, 2, 3], [6, 3, 4, 8, 15, 24, 33, 43, 53, 61, 66, 70, 73, 77, 81, 82, 78, 70, 61, 49, 35, 24, 18, 14]], "mm": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.5, 0.1, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.5, 0.1, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.4, 0.1, 0.0, 0.0, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]], "w": [[11.7, 11.1, 10.4, 9.1, 8.3, 7.8, 9.4, 9.4, 10.3, 10.5, 10.6, 13.7, 15.5, 15.7, 16.6, 18.7, 18.7, 18.4, 18.1, 17.3, 16.4, 15.5, 14.9, 14.4], [11.7, 11.1, 10.4, 9.1, 8.3, 7.8, 9.4, 9.4, 10.3, 10.5, 10.6, 13.7, 15.5, 15.7, 16.6, 18.7, 18.7, 18.4, 18.1, 17.3, 16.4, 15.5, 14.9, 14.4], [0.8, 1.2, 1.3, 1.0, 1.1, 1.3, 1.5, 2.2, 6.3, 7.0, 8.3, 9.3, 10.9, 12.0, 13.6, 16.1, 17.0, 17.3, 17.2, 15.9, 13.7, 12.1, 11.1, 10.5]], "g": [[26.3, 27.7, 25.9, 24.8, 22.7, 21.2, 23.0, 23.4, 23.8, 29.2, 27.4, 34.2, 38.5, 38.9, 42.5, 45.4, 46.8, 47.5, 47.9, 47.2, 45.7, 43.9, 41.4, 38.5], [26.3, 27.7, 25.9, 24.8, 22.7, 21.2, 23.0, 23.4, 23.8, 29.2, 27.4, 34.2, 38.5, 38.9, 42.5, 45.4, 46.8, 47.5, 47.9, 47.2, 45.7, 43.9, 41.4, 38.5], [18.7, 20.2, 21.6, 21.6, 21.6, 22.7, 23.4, 23.8, 30.6, 32.4, 36.4, 39.2, 44.6, 49.3, 55.8, 60.8, 64.8, 67.7, 69.1, 69.1, 67.7, 65.5, 62.3, 58.7]], "wc": [[3, 3, 3, 3, 3, 3, 51, 51, 53, 51, 3, 1, 51, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1], [3, 3, 3, 3, 3, 3, 51, 51, 53, 51, 3, 1, 51, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1], [3, 3, 3, 45, 45, 45, 51, 51, 51, 51, 3, 3, 51, 51, 2, 1, 1, 2, 2, 2, 1, 1, 1, 2]]};
+let WX = {"consulta": "18/11 08:53", "niveles": [795, 1400, 1916], "amanecer": "06:12", "atardecer": "20:50", "t": [[10.0, 9.8, 9.4, 9.1, 9.1, 9.0, 9.1, 9.1, 9.2, 9.9, 11.3, 12.0, 12.5, 12.8, 13.5, 13.7, 13.7, 13.4, 12.9, 11.8, 10.5, 9.3, 8.6, 8.0], [6.1, 5.8, 5.5, 5.2, 5.1, 5.1, 5.1, 5.1, 5.3, 5.9, 7.4, 8.1, 8.6, 8.9, 9.5, 9.8, 9.7, 9.5, 8.9, 7.9, 6.5, 5.4, 4.6, 4.1], [1.4, 1.5, 0.9, 0.6, 0.7, 0.8, 1.0, 1.0, 1.2, 1.4, 2.5, 3.3, 3.4, 3.6, 5.0, 5.4, 5.3, 4.7, 3.9, 2.7, 1.4, 0.2, -0.6, -1.2]], "at": [[7.7, 7.6, 7.3, 7.2, 7.3, 7.3, 7.1, 7.0, 7.1, 7.7, 8.8, 8.9, 9.5, 10.2, 11.8, 10.8, 11.0, 10.2, 8.8, 7.6, 6.4, 5.3, 4.7, 4.3], [2.9, 2.8, 2.5, 2.4, 2.5, 2.5, 2.3, 2.2, 2.3, 2.9, 4.1, 4.2, 4.8, 5.6, 7.2, 6.3, 6.4, 5.6, 4.2, 3.0, 1.8, 0.8, 0.1, -0.3], [-0.7, -0.7, -1.2, -1.5, -1.4, -1.4, -1.2, -1.3, -1.8, -1.7, -0.8, -0.2, -0.4, -0.2, 2.5, 1.9, 1.9, 0.7, -1.0, -2.1, -3.2, -4.1, -4.8, -5.3]], "pp": [[4, 3, 5, 8, 12, 17, 22, 25, 28, 33, 41, 50, 57, 58, 57, 55, 55, 55, 51, 39, 22, 10, 5, 4], [8, 8, 10, 12, 14, 16, 20, 26, 34, 39, 41, 40, 41, 46, 51, 53, 47, 37, 27, 18, 10, 4, 2, 3], [6, 3, 4, 8, 15, 24, 33, 43, 53, 61, 66, 70, 73, 77, 81, 82, 78, 70, 61, 49, 35, 24, 18, 14]], "mm": [[0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.5, 0.1, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.5, 0.1, 0.0, 0.0, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0], [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.1, 0.1, 0.4, 0.1, 0.0, 0.0, 0.1, 0.1, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]], "w": [[11.7, 11.1, 10.4, 9.1, 8.3, 7.8, 9.4, 9.4, 10.3, 10.5, 10.6, 13.7, 15.5, 15.7, 16.6, 18.7, 18.7, 18.4, 18.1, 17.3, 16.4, 15.5, 14.9, 14.4], [11.7, 11.1, 10.4, 9.1, 8.3, 7.8, 9.4, 9.4, 10.3, 10.5, 10.6, 13.7, 15.5, 15.7, 16.6, 18.7, 18.7, 18.4, 18.1, 17.3, 16.4, 15.5, 14.9, 14.4], [0.8, 1.2, 1.3, 1.0, 1.1, 1.3, 1.5, 2.2, 6.3, 7.0, 8.3, 9.3, 10.9, 12.0, 13.6, 16.1, 17.0, 17.3, 17.2, 15.9, 13.7, 12.1, 11.1, 10.5]], "g": [[26.3, 27.7, 25.9, 24.8, 22.7, 21.2, 23.0, 23.4, 23.8, 29.2, 27.4, 34.2, 38.5, 38.9, 42.5, 45.4, 46.8, 47.5, 47.9, 47.2, 45.7, 43.9, 41.4, 38.5], [26.3, 27.7, 25.9, 24.8, 22.7, 21.2, 23.0, 23.4, 23.8, 29.2, 27.4, 34.2, 38.5, 38.9, 42.5, 45.4, 46.8, 47.5, 47.9, 47.2, 45.7, 43.9, 41.4, 38.5], [18.7, 20.2, 21.6, 21.6, 21.6, 22.7, 23.4, 23.8, 30.6, 32.4, 36.4, 39.2, 44.6, 49.3, 55.8, 60.8, 64.8, 67.7, 69.1, 69.1, 67.7, 65.5, 62.3, 58.7]], "wc": [[3, 3, 3, 3, 3, 3, 51, 51, 53, 51, 3, 1, 51, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1], [3, 3, 3, 3, 3, 3, 51, 51, 53, 51, 3, 1, 51, 1, 1, 1, 1, 1, 1, 1, 0, 0, 1, 1], [3, 3, 3, 45, 45, 45, 51, 51, 51, 51, 3, 3, 51, 51, 2, 1, 1, 2, 2, 2, 1, 1, 1, 2]]};
+/* wx vivo */
+// La primera vez que se abre la página en el día (en cada navegador) pide el pronóstico a Open-Meteo
+// y lo guarda hasta el día siguiente. Si falla (sin red, o el visor no deja salir), queda el que vino con la página.
+const WX_FECHA="2026-11-21", WX_URL="https://api.open-meteo.com/v1/forecast?latitude=-41.133,-41.122,-41.165&longitude=-71.310,-71.355,-71.495&elevation=795,1400,1916&hourly=temperature_2m,apparent_temperature,precipitation_probability,precipitation,wind_speed_10m,wind_gusts_10m,weather_code&daily=sunrise,sunset&timezone=America%2FArgentina%2FBuenos_Aires&start_date=2026-11-21&end_date=2026-11-21&wind_speed_unit=kmh";
+function wxActualiza(listo){
+  const tz={timeZone:"America/Argentina/Buenos_Aires"}, hoy=new Intl.DateTimeFormat("en-CA",tz).format(new Date());
+  if(hoy>WX_FECHA) return;
+  const usar=w=>{ if((w.ts||0)>(WX.ts||0)){ WX=w; try{ listo(); }catch(e){} } };
+  let c=null; try{ c=JSON.parse(localStorage.getItem("frey85k-wx")); }catch(e){}
+  if(c && c.dia===hoy && c.wx){ usar(c.wx); return; }
+  const C={t:"temperature_2m",at:"apparent_temperature",pp:"precipitation_probability",mm:"precipitation",w:"wind_speed_10m",g:"wind_gusts_10m",wc:"weather_code"};
+  fetch(WX_URL).then(r=>r.ok?r.json():Promise.reject(r.status)).then(d=>{
+    if(!Array.isArray(d)||d.length!==3) return;
+    const f=new Intl.DateTimeFormat("es-AR",{...tz,day:"2-digit",month:"2-digit",hour:"2-digit",minute:"2-digit",hour12:false}).formatToParts(new Date());
+    const q=t=>f.find(x=>x.type===t).value;
+    const w={consulta:`${q("day")}/${q("month")} ${q("hour")}:${q("minute")}`,ts:Date.now(),niveles:[795,1400,1916],
+      amanecer:d[0].daily.sunrise[0].slice(11,16),atardecer:d[0].daily.sunset[0].slice(11,16)};
+    for(const [k,v] of Object.entries(C)){ w[k]=d.map(l=>l.hourly[v]); if(w[k].some(a=>!a||a.length<24||a.some(x=>x==null))) return; }
+    try{ localStorage.setItem("frey85k-wx",JSON.stringify({dia:hoy,wx:w})); }catch(e){}
+    usar(w);
+  }).catch(()=>{});
+}
+/* fin wx vivo */
 const WXN={0:"despejado",1:"mayormente despejado",2:"parcialmente nublado",3:"nublado",45:"niebla",48:"niebla",51:"llovizna débil",53:"llovizna",55:"llovizna intensa",56:"llovizna helada",61:"lluvia débil",63:"lluvia",65:"lluvia intensa",66:"lluvia helada",71:"nieve débil",73:"nieve",75:"nieve intensa",77:"granizo fino",80:"chaparrones débiles",81:"chaparrones",82:"chaparrones fuertes",85:"chaparrones de nieve",86:"chaparrones de nieve",95:"tormenta",96:"tormenta con granizo",99:"tormenta con granizo"};
 function wxHora(k,n,h){ const a=WX[k][n], i=Math.max(0,Math.min(a.length-2,Math.floor(h))), f=Math.max(0,Math.min(1,h-i)); return a[i]+(a[i+1]-a[i])*f; }
 function wxAt(alt,min){
@@ -658,7 +681,7 @@ function renderClima(horaDe){
     `Lluvia: hasta ${Math.round(ll.x.pp)} % de probabilidad, ${mm.toFixed(1).replace(".",",")} mm en el día`
   ].map(t=>`<span>${t}</span>`).join("");
   $("wx-tag").textContent=`Open-Meteo · consultado ${WX.consulta}`;
-  $("wx-nota").innerHTML=`Pronóstico de modelo, consultado el ${WX.consulta}. A varios días de la carrera es orientativo: se actualiza el jueves o el viernes. Los valores se interpolan entre tres alturas (795, 1400 y 1916 m).`;
+  $("wx-nota").innerHTML=`Pronóstico de modelo, consultado el ${WX.consulta}. Se actualiza solo: la página lo pide de nuevo la primera vez que se abre cada día. Los valores se interpolan entre tres alturas (795, 1400 y 1916 m).`;
 }
 /* franja bajo el perfil (estilo LiveTrail): km y nombre de cada puesto, tramos, luz del día,
    clima a la hora estimada y tiempo de cada tramo. horaDe(i) = minutos desde la largada */
@@ -778,6 +801,7 @@ let rz, anchoP=0; const redib=()=>{ clearTimeout(rz); rz=setTimeout(draw,150); }
 if(window.ResizeObserver) new ResizeObserver(e=>{ const w=Math.round(e[0].contentRect.width); if(w&&w!==anchoP){ anchoP=w; redib(); } }).observe(document.getElementById("perfil").parentNode);
 else addEventListener("resize",redib);
 draw(); todo(); avisoAjuste(); setInterval(estado,30000);
+wxActualiza(()=>{ draw(); todo(); });
 const p2=n=>String(n).padStart(2,"0");
 function reloj(){
   const now=Date.now(), lbl=document.getElementById("cd-lbl"), cd=document.getElementById("cd");
